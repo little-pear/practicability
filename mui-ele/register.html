@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">注册</h1>
+		<!-- <button class="mui-btn-link mui-pull-right">注册</button> -->
+	</header>
+	<div class="mui-content">
+		<div class="public-margin-top">
+			<form class="mui-input-group" action="javascript:;">
+				<div class="mui-input-row register-input">
+					<input type="text" class="mui-input" placeholder="手机号">
+					<button class="yzm-btn">获取验证码</button>
+				</div>
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" placeholder="验证码">
+				</div>
+				<div class="mui-input-row">
+					<input type="password" class="mui-input-password" placeholder="密码">
+				</div>
+				<button class="public-g-btn btn-block">注册</button>
+			</form>
+		</div>
+	</div>
+
+	<script src="js/mui.js"></script>
+	<script src="js/castapp.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init()
+		ca.init();
+
+
+		//获得所有的input
+		var input = ca.tagName('input');
+		var button = ca.tagName('button');
+
+		// 开关
+		var onoff = true
+		var code_data = "";
+
+		//获取验证码
+		button[0].addEventListener('tap', function () {
+			//获取手机号
+			var phone = input[0].value;
+			if (phone == '') {
+				ca.prompt('请输入手机号')
+				return
+			}
+			if (phone.length != 11) {
+				ca.prompt('手机号码位数不正确')
+				return
+			}
+
+			if (!onoff) {
+				return
+			}
+			onoff = false;
+
+			code_data = ca.getIdCode(4)
+
+			// alert(code)
+			ca.prompt("验证码:" + code_data)
+
+			var num = 10;
+			button[0].innerHTML = num + 's';
+			var timer = setInterval(function () {
+				num--
+				if (num < 1) {
+					button[0].innerHTML = '获取验证码';
+					onoff = true;
+					clearInterval(timer)
+					code_data = "asdfasf"
+				} else {
+					button[0].innerHTML = num + 's';
+				}
+			}, 1000)
+
+			//通知后端发送短信
+			// castapp.sendIdCode({
+			// 	code:code_data,
+			// 	target_phone: phone,
+			// 	appid:'12123123',
+			// 	appkey:'safasff',
+			// 	sms_templates:'sms-tmpl_2',
+			// 	callback:function(state){
+			// 		if (state == true){
+			// 			ca.prompt("发送成功")
+			// 		} else {
+			// 			ca.prompt("发送失败")
+			// 		}
+			// 	}
+			// })
+
+		})
+
+		//注册
+		button[1].addEventListener('tap', function () {
+			var phone = input['0'].value;
+			var input_code = input['1'].value;
+			var password = input['2'].value;
+
+			if (phone == "") {
+				ca.prompt("手机号码不能为空")
+				return
+			}
+
+			if (input_code == "") {
+				ca.prompt("验证码不能为空")
+				return
+			}
+
+			if (input_code != code_data) {
+				ca.prompt("验证码输入不正确")
+				return
+			}
+
+			if (password == "") {
+				ca.prompt("密码不能为空")
+				return;
+			}
+
+			var request_url =localStorage.getItem("request_url")
+
+			//请求数据库注册用户
+			ca.get({
+				url: request_url + 'Login/register_do',
+				data: {
+					phone_data: phone,
+					password_data: password
+				},
+				succFn:function (data) {
+					
+					if (data>0) {
+						ca.prompt("注册成功")
+						
+						localStorage.setItem("login_phone",phone);
+						var arr = ['home']
+						ca.sendNotice(arr,"update",{})
+						ca.getStartInterface(function(obj){
+							obj.show();
+						});
+						
+					} else if (data == -2){
+						ca.prompt("手机号码已经存在")
+					} else {
+						ca.prompt("注册失败，请重试")
+					}
+				}
+			});
+		})
+
+
+	</script>
+</body>
+
+</html>

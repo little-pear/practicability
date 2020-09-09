@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/takeaway.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav header-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="title">   分类</h1>
+		</header>
+		
+		<div class="mui-content">
+			
+			<div class="content-box" style="margin-top: 0px;">
+				
+				<div class="wm-list" id="div_list">
+					<div class="wm-list-div">
+						<div class="wm-list-div-l">
+							<img src="images/logo.png" >
+						</div>
+						<div class="wm-list-div-r">
+							<div class="wm-list-div-r-o">
+								<div class="wm-list-div-r-o-l">
+									<h4>韩国炸鸡专营店</h4>
+								</div>
+								<div class="wm-list-div-r-o-r">
+									<h5> <span>¥</span><span class="big-txt">35</span>元起送</h5>
+								</div>
+							</div>
+							<div class="wm-list-div-r-t">
+								<div class="wm-list-div-r-t-l">
+									<span class="mui-icon mui-icon-star-filled start-ys start-active"></span>
+									<span class="mui-icon mui-icon-star-filled start-ys start-active"></span>
+									<span class="mui-icon mui-icon-star-filled start-ys start-active"></span>
+									<span class="mui-icon mui-icon-star-filled start-ys start-active"></span>
+									<span class="mui-icon mui-icon-star-filled start-ys"></span>
+									<span class="small-txt o-txt">4.5</span>
+									<span class="small-txt">月售3522件</span>
+								</div>
+								<div class="wm-list-div-r-t-r">
+									<span class="small-txt">免配送费</span>
+								</div>
+							</div>
+							<div class="wm-list-div-r-tt">
+								<span  class="small-txt">34分钟</span> <span  class="small-txt">1.5千米</span>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		
+		<script src="js/castapp.js" type="text/javascript"></script>
+		<script src="js/mui.js"></script>
+		<script src="js/my_tmpl.js"></script>
+		<script type="text/javascript">
+			// mui.init()
+			ca.init(false);
+			
+			
+			var request_url = localStorage.getItem("request_url")
+			var login_phone = localStorage.getItem("login_phone")
+			
+			var title = localStorage.getItem('class_title')
+			var h1 = ca.id('title')
+			h1.innerHTML = title;
+			
+			
+			var div_list = ca.id('div_list')
+			
+			ca.get({
+				url:request_url + "Item/get_item",
+				data:{class_data:title},
+				succFn:function(data){
+					// alert(data)
+					if (data) {
+						var json = JSON.parse(data)
+						div_list.innerHTML = ""
+						for (var a in json) {
+							var tmpl = my_tmpl.itemTmpl(json[a]);
+							div_list.innerHTML += tmpl			
+						}
+					}
+				}
+			})
+			
+			//点击分类
+			var class_btn = ca.className('wm-menu-div')
+			for (var a = 0; a < class_btn.length;a++){
+				class_btn[a].addEventListener('tap',function(){
+					var p = this.getElementsByTagName('p');
+					var title = p['0'].innerHTML
+					
+					ca.newInterface({
+						url:'class_item.html',
+						id:'class_item'
+					})
+				})
+			}
+			
+		</script>
+	</body>
+
+</html>

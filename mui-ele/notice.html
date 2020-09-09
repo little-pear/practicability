@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/order.css"/>
+		
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的通知</h1>
+		</header>
+		
+		<div class="mui-content public-margin-top">
+						
+			<div class="order-ok-list">
+				<div class="notice-div" id="div_list">
+					<!-- <div class="order-ok-list-t punlic-clear-both" >
+						<div class="order-ok-list-t-l">
+							<img src="images/eleme-logo.jpg" >
+						</div>
+						<div class="order-ok-list-t-r">
+							<div class="order-ok-list-t-r-t">
+								<h5>系统通知 <span class="small-txt mui-pull-right">2016-03-23</span></h5>
+							</div>
+							<div class="order-ok-list-t-r-b">
+								<p>欢迎来到饿了么，开启美好生活</p>
+							</div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+			<!-- <div class="order-ok-list">
+				<div class="order-ok-list-t punlic-clear-both" >
+					<div class="order-ok-list-t-l">
+						<img src="images/logo.png" >
+					</div>
+					<div class="order-ok-list-t-r">
+						<div class="order-ok-list-t-r-t">
+							<h5>商家已接单 <span class="small-txt mui-pull-right">2016-03-23</span></h5>
+						</div>
+						<div class="order-ok-list-t-r-b">
+							<p>您购买的苏州灌汤包已经接单，正在配送</p>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+		
+		<script src="js/mui.js"></script>
+		<script src="js/castapp.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			var div_list = ca.id('div_list')
+			
+			var request_url = localStorage.getItem("request_url")
+			var login_phone = localStorage.getItem("login_phone")
+			
+			get_message();
+			
+			function get_message(){
+				ca.get({
+					url:request_url + "User/get_message",
+					data:{
+						phone_data:login_phone
+					},succFn:function(data){
+						if (data) {
+							var json = JSON.parse(data)
+							div_list.innerHTML = ""
+							for (var a in json) {
+								
+								var tmpl = '<div class="order-ok-list-t punlic-clear-both" >'
+											+'	<div class="order-ok-list-t-l">'
+											+'		<img src="images/eleme-logo.jpg" >'
+											+'	</div>'
+											+'	<div class="order-ok-list-t-r">'
+											+'		<div class="order-ok-list-t-r-t">'
+											+'			<h5>系统通知 <span class="small-txt mui-pull-right">'+json[a].cTime+'</span></h5>'
+											+'		</div>'
+											+'		<div class="order-ok-list-t-r-b">'
+											+'			<p>'+json[a].message+'</p>'
+											+'		</div>'
+											+'	</div>'
+											+'</div>';
+								div_list.innerHTML += tmpl			
+							}
+						}
+					}
+				})
+			}
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,147 @@
+
+.dd-box {
+	padding-top: 30%;
+	text-align: center;
+}
+
+.dd-box img {
+	width: 30%;
+}
+
+.dd-box h4{
+	color: #333;
+	margin: 10px 0px;
+	font-weight: normal;
+}
+
+
+.dd-box button {
+	padding: 8px 20px;
+}
+
+
+.order-ok-list{
+	background: #fff;
+	padding: 10px 15px;
+	margin-bottom: 5px;
+}
+
+.order-ok-list-o{
+	/* background: red; */
+}
+
+.order-ok-list-o span {
+	font-size: 12px;
+	font-weight: normal;
+	color: #999;
+}
+
+.order-ok-list-t{
+	margin-top: 10px;
+	/* background: green; */
+}
+
+.order-ok-list-t div{
+	border-bottom: 1px solid #f0f0f0;
+	float: left;
+}
+
+.order-ok-list-t-l{
+	width: 20%;
+	/* background: pink; */
+}
+.order-ok-list-t-l img{
+	width: 70%;
+}
+.order-ok-list-t-r{
+	width: 80%;
+	/* background: gray; */
+}
+
+.order-ok-list-t-r-t  {
+	width: 100%;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.order-ok-list-t-r-t h5 {
+	color: #333;
+}
+
+.order-ok-list-t-r-t h5 span {
+	font-size: 13px;
+	margin-left: 10px;
+}
+
+.order-ok-list-t-r-b {
+	padding: 10px 0px;
+	/* background: pink; */
+	width: 100%;
+}
+
+.order-ok-list-t-r-b {
+	padding: 10px 0px;
+}
+
+.order-ok-list-tt button{
+	color: #3492E9;
+	border: 1px solid  #3492E9;
+	margin: 10px 0px;
+}
+
+
+/* 收货地址 */
+
+.address-button{
+	background: #fff;
+	color: #21A9F6;
+	border: 0px;
+	height: 35px;
+	line-height: 35px;
+}
+
+.ad-button-div{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
+
+.ad-button-div button{
+	width: 100%;
+	border-radius: 0px;
+}
+
+.button-txt{
+	position: relative;
+	top:-2px;
+}
+
+.ad-button-div span{
+	margin: 0px 5px;
+}
+
+.add-address-div button{
+	width: 80%;
+}
+
+.address-list h5{
+	color: #333;
+	font-weight: bold;
+}
+
+.address-list h5 span {
+	margin-right: 5px;
+}
+
+/* 订单详情 */
+.order-detail-s{
+	padding: 20px 15px;
+	background: #fff;
+}
+
+.line-btn{
+	border: 1px solid #3492E9;
+	color: #3492E9;
+	height: 25px;
+	line-height: 12px;
+	font-size: 13px;
+}

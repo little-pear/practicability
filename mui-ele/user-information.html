@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">账户信息</h1>
+		</header>
+		
+		<div class="mui-content">
+			<div class="user-info public-margin-top public-list-txt">
+				<div class="">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell img-list">
+							<!-- <a class="mui-navigate-right"> -->
+								<span>头像</span>
+								<img src="images/head.jpg" class="user-img" id="head_img">
+							<!-- </a> -->
+						</li>
+						<li class="mui-table-view-cell">
+							<!-- <a class="mui-navigate-right"> -->
+								 <span>用户名</span>
+								 <!-- <span class="small-txt mui-pull-right right-txt">核桃仁</span> -->
+								<input id="input" style="width: 50%; float: right; padding: 0px; margin: 0px; height: 20px; line-height: 20px; border: 0px; text-align: right;" type="text" placeholder="昵称"/>
+							<!-- </a> -->
+						</li>
+					</ul>
+					
+					<ul class="mui-table-view public-margin-top">
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right">
+								<span>重置密码</span>
+							</a>
+						</li>
+					</ul>
+					<button id="btn" style="border: 0px; width: 90%; margin: 15px auto; display: block;" class="public-b-btn" type="button">保存</button>
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/mui.js"></script>
+		<script src="js/castapp.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			
+			ca.init()
+			var cell = ca.className('mui-table-view-cell');
+			var head_img = ca.id('head_img')
+			var btn = ca.id('btn')
+			var input = ca.id('input')
+			
+			var request_url = localStorage.getItem('request_url')
+			
+			
+			var user_json = JSON.parse(localStorage.getItem("user_data"))
+			if (user_json){
+				head_img.src = user_json.headimg
+				input.value = user_json.nickname
+				head_img.setAttribute("img", user_json.headimg)
+			}
+			
+			// 头像
+			cell[0].addEventListener('tap',function(){
+				var arr = ['照相机','相册'];
+				
+				ca.actionSheet(arr,{
+					succFn:function(data){
+						data=data.replace("\"","");   
+						data=data.replace("\"","");   
+						console.log(request_url+data)
+						var url = request_url+data
+						head_img.src = url
+						head_img.setAttribute("img", url)
+						
+					},//是否开启上传
+					isUpload: true,
+					uploadUrl:request_url+"upload_file",
+				})
+			});
+			
+			//重置密码
+			cell[2].addEventListener('tap',function(){
+				ca.newInterface({
+					url:'reset-password.html',
+					id:'reset-password',
+				})
+			})
+			
+			//保存
+			btn.addEventListener('tap',function(){
+				var img = head_img.getAttribute('img');
+				var nickname = input.value;
+				
+				if (img == '') {
+					ca.prompt('请上传头像')
+					return
+				}
+				if (nickname =="") {
+					ca.prompt('昵称不能为空')
+					return
+				}
+				
+				var login_phone = localStorage.getItem('login_phone')
+				 ca.get({
+					 url:request_url + "User/mod_user",
+					 data:{
+						 img_data:img,
+						 nickname_data: nickname,
+						 phone_data: login_phone
+					 },succFn:function(data){
+						 if (data == 0) {
+							 ca.prompt("保存成功")
+							 
+							 //通知
+							 var arr=['home'];
+							 ca.sendNotice(arr,'update',{})
+							 //关闭当前界面
+							 ca.closeCurrentInterface();
+							 
+						 } else{
+							 ca.prompt("保存失败")
+						 }
+					 }
+				 })
+			})
+			
+		</script>
+	</body>
+
+</html>

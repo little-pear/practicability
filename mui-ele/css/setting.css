@@ -1,0 +1,19 @@
+.setting-list-div{
+	margin-top: 15px;
+}
+
+
+.tc-btn {
+	color: #F33C3C;
+	border: 0px;
+	
+	width: 80%;
+	display: block;
+
+	margin: 20px auto;
+}
+
+.small-txt{
+	color: #666;
+	font-size: 13px !important;
+}

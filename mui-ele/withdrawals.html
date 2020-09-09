@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/withdrawals.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">余额提现</h1>
+		</header>
+		
+		<div class="mui-content">
+			<div class="withdrawals-div">
+				<p>可提现余额<span class="o-txt info" id="money">50.00</span>元</p>
+				<div class="withdrawals-input">
+					<input type="text" class="info" placeholder="请输入提现金额" />
+				</div>
+				<div class="withdrawals-sm">
+					<h4><span class="iconfont icon-lingdang o-txt"></span>3-10个工作日退回最近消费的账户中</h4>
+					<p>银行处理退款会有一定延迟，请耐心等待；如有问题，请联系客服</p>
+				</div>
+				<button class="public-b-btn info">确认提现</button>
+				<p style="text-align: center;">每天仅限1次</p>
+			</div>
+		</div>
+		
+		<script src="js/mui.js"></script>
+		<script src="js/castapp.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			ca.init();
+			
+			var info = ca.className('info')
+			var user_json = JSON.parse(localStorage.getItem("user_data"))
+			info[0].innerHTML = user_json.money
+			
+			info[2].addEventListener('tap',function(){
+				var money = info[1].value 
+				if (money == "") {
+					ca.prompt('提现金额不能为空')
+					return;
+				}
+				
+				if ( parseFloat(money) >parseFloat(user_json.money) ) {
+					ca.prompt("提现金额不能超出余额")
+					return
+				}
+				
+				
+				
+				var request_url = localStorage.getItem('request_url')
+				var login_phone = localStorage.getItem('login_phone');
+				ca.get({
+					url:request_url + "User/get_cash",
+					data:{
+						phone_data:login_phone,
+						money_data:money
+					},succFn:function(data){
+						if (data == -1) {
+							ca.prompt('每天仅限提现1次')
+						} else if (data >= 0) {
+							ca.prompt('提现申请已发送')
+							alert(data)
+							var user_json = JSON.parse(localStorage.getItem('user_data'))
+							user_json.money = data
+							localStorage.setItem('user_data', JSON.stringify(user_json))
+							
+							var arr = ["home","money"]
+							ca.sendNotice(arr,"update",{})
+							
+							
+						} else {
+							ca.prompt('提现失败')
+						}
+					}
+				})
+			})
+			
+		</script>
+	</body>
+
+</html>

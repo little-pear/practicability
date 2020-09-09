@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/order.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">收货地址</h1>
+		</header>
+		
+		<div class="mui-content">
+			<!-- 已登陆没有地址的样式 -->
+			<!--<div class="dd-box">
+				<img src="images/ts-tp.png" >
+				<h4>没有地址</h4>
+				<p>点击下方按钮新增</p>
+				<div class="ad-button-div">
+					<button class="public-b-btn address-button"><span class="mui-icon mui-icon-plus"></span><span class="button-txt">新增地址</span></button>
+				</div>
+			</div> -->
+			
+			<!-- 已登陆收货地址样式 -->
+			<div class="dd-box-ok">
+				<ul class="mui-table-view" id="add-list">
+					<!-- <li class="mui-table-view-cell">
+						<a class="mui-navigate-right address-list">
+							<h5><span>Evan</span><span>先生</span><span>1834768594</span></h5>
+							<p>青浦区招商华府40# 102</p>
+						</a>
+					</li> -->
+				</ul>
+			</div>
+			
+			<div class="ad-button-div">
+				<button id="btn" class="address-button public-b-btn"> <span class="mui-icon mui-icon-plus"></span> 新增地址</button>
+			</div>
+			
+		</div>
+		
+		<script src="js/mui.js"></script>
+		<script src="js/castapp.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			ca.init();
+			
+			var btn = ca.id('btn');
+			var addlist = ca.id("add-list")
+			
+			btn.addEventListener('tap',function(){
+				//跳转到添加地址界面
+				ca.newInterface({
+					url:"add-address.html",
+					id:"add-address"
+				})
+			})
+			
+			var request_url = localStorage.getItem("request_url");
+			var login_phone = localStorage.getItem("login_phone")
+			
+			ca.receiveNotice('update',function(){
+				get_address();
+			})
+			
+			get_address();
+			
+			function get_address(){
+				ca.get({
+					url: request_url + "User/get_address",
+					data:{
+						phone_data:login_phone
+					},succFn:function(data){
+						var json = JSON.parse(data)
+						addlist.innerHTML = ""
+						for (var a in json) {
+							
+							
+							if (json[a].sex == "男") {
+								var sex = "先生"
+							} else {
+								var sex = "女士"
+							}
+							
+							var tmpl = '<li class="mui-table-view-cell" id_data="'+json[a].id+'">'
+										+'	<a class="mui-navigate-right address-list">'
+										+'		<h5><span>'+json[a].name+'</span><span>'+sex+'</span><span>'+json[a].phone+'</span></h5>'
+										+'		<p>'+json[a].address+'</p>'
+										+'	</a>'
+										+'</li>';
+							addlist.innerHTML += tmpl			
+						}
+						click_event();
+					},
+				})
+			}
+			
+			function click_event(){
+				var cell = ca.className('mui-table-view-cell')
+				for (var a = 0; a < cell.length; a++) {
+					
+					(function(index){
+						ca.gesture(cell[a],'longtap',function(){
+							
+							var id = cell[index].getAttribute('id_data')
+							
+							ca.get({
+								url: request_url + "User/del_address",
+								data:{
+									id_data : id
+								},succFn:function(data){
+									if (data == 0 ) {
+										ca.prompt('已删除')
+										var t = cell[index];
+										var parent = t.parentNode;
+										parent.removeChild(t);
+									} else {
+										ca.prompt('删除失败')
+									}
+								},
+							})
+						})
+					})(a);
+					
+					
+					
+				} 
+			}
+			
+			
+			
+		</script>
+	</body>
+
+</html>

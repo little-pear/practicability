@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/setting.css"/>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">设置</h1>
+		</header>
+		
+		<div class="mui-content">
+			<div class="setting-list-div public-list-txt">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span>检查更新</span> <span class="small-txt mui-pull-right" style="margin-right: 20px; color:#ccc">V0.0.1</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							 <span>意见反馈</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							 <span>关于饿了么</span>
+						</a>
+					</li>
+				</ul>
+				
+				<button class="tc-btn" id="btn">退出登录</button>
+			</div>
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/castapp.js"></script>
+		<script type="text/javascript">
+			
+			ca.init()
+			
+			var cell = ca.className("mui-table-view-cell")
+			var btn = ca.id('btn')
+			
+			//检查更新
+			cell[0].addEventListener('tap',function(){
+				//跟服务器比对版本号
+				//安卓 直接下载apk
+				//IOS 跳转app stroe 地址
+				
+				
+// 				dongyi.get({
+// 					url:'http://api.castapp.cn/update_service',
+// 					data:{
+// 						platform_data:dongyi.getOs('name'),
+// 						version_data:dongyi.getRuntime('version'),
+// 					},
+// 					succFn:function(data){
+// 						if(data == 0){
+// 							if(state != 'system'){
+// 								dongyi.prompt('没有发现新版本');
+// 								return;
+// 							}
+// 						}else{
+// 							dongyi.confirm({
+// 								title:'更新提示',
+// 								content:'发现新版本，是否更新？',
+// 								callback:function(rvalue){
+// 									if(rvalue){					
+// 										dongyi.openUrl(JSON.parse(data));
+// 									}
+// 								}
+// 							})
+// 						}
+// 					}
+// 				})
+			})
+			
+			//意见反馈
+			cell[1].addEventListener('tap',function(){
+				ca.newInterface({
+					url:'feedback.html',
+					id :'feedback'
+				})
+			})
+			
+			//关于饿了么
+			cell[2].addEventListener('tap',function(){
+				ca.newInterface({
+					url:"about.html",
+					id:"about"
+				})
+			})
+			
+			//退出登录
+			btn.addEventListener('tap',function(){
+				
+				ca.closeCurrentInterface()
+				
+				localStorage.removeItem('login_phone')
+				localStorage.removeItem('user_data')
+				
+				var arr = ['home']
+				ca.sendNotice(arr,"update",{})
+				
+				//底部导航初始化
+				ca.tabBarInit(true,'')
+			})
+			
+		</script>
+	</body>
+
+</html>

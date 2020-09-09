@@ -1,0 +1,246 @@
+.mui-bar-tab .mui-tab-item.mui-active {
+	color: #3492E9;
+}
+
+.mui-bar-nav{
+	background-color: #3492E9;
+}
+
+.mui-bar-nav a, .mui-bar-nav h1,.mui-bar-nav button{
+	color: #fff !important;
+}
+
+.mui-bar-nav h1 span {
+	font-size: 18px !important;
+	margin: 0px 3px !important;
+}
+
+/*通用属性*/
+
+/*通用据上面距离*/
+.public-margin-top{
+	margin-top: 20px;
+}
+
+/*改变 placeholder文字的颜色*/
+/* .mui-input-row input::-webkit-input-placeholder{
+	color: red;
+} */
+
+/* 通用绿色按钮 */
+.public-g-btn {
+	background-color: #55D075;
+	color: #fff;
+	border: 0px;
+	display: block;
+	margin: 20px auto;
+}
+
+/*通用label文字大小*/
+.public-lable-txt div label,.public-lable-txt div input,.public-lable-txt div textarea{
+	font-size:15px;
+	color:#666;
+}
+
+.btn-block{
+	height: 45px;
+	width: 90%;
+	font-size: 18px;
+}
+
+.link-btn {
+	/* color: #999; */
+	font-size: 13px;
+	position: relative;
+	top:-10px;
+	ight:10px; 
+}
+
+/* 通用蓝色按钮 */
+.public-b-btn {
+	background-color:#3199E8;
+	color: #fff;
+}
+
+.public-list-txt ul li {
+	font-size:15px;
+	color: #666;
+}
+
+.punlic-clear-both {
+	overflow: hidden;
+}
+
+/*注册页面*/
+.register-input{
+	position: relative;
+}
+
+.yzm-btn{
+	position: absolute;
+	top:6px;
+	right: 20px;
+	background-color: #CCCCCC;
+	color: #fff;
+	height: 28px;
+	line-height: 15px;
+}
+
+
+.header-bar {
+	-webkit-box-shadow: 0px 0px 0px;
+}
+
+
+.about-bg {
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+}
+
+.about-bg p {
+	font-size: 13px;
+	line-height: 13px;
+}
+
+.user-img{
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	position: absolute;
+	
+	top:5px;
+	right: 13px;
+	
+}
+
+.img-list{
+	padding: 15px ;
+	position: relative;
+}
+
+.small-txt{
+	color: #666;
+	font-size: 13px !important;
+}
+
+.right-txt{
+	margin-right: 23px;
+	color: #999;
+}
+
+.name-div {
+	margin: 20px 10px;
+}
+
+.o-txt{
+	color: #FF6000 !important;
+	margin: 0px 2px;
+}
+
+.blue-txt{
+	color: #3492E9 !important;
+}
+
+.bold-txt{
+	color: #333;
+	font-size: 18px;
+	margin-left: 10px;
+}
+/* 充值 */
+.cz-right-txt{
+	font-size: 13px;
+	color:#FF7A29;
+	margin-right: 20px;
+}
+
+.pay-class{
+	margin-top: 20px;
+}
+
+.pay-success{
+	margin-top: 30%;
+	text-align: center;
+}
+
+.pay-success button{
+	border:0px;
+	width:50%;
+}
+
+.boss-div img{
+	width: 100%;
+	margin-bottom: -10px;
+}
+
+/* 评价 */
+.pingjia-div-o {
+	padding: 15px;
+	overflow: hidden;
+	background: #fff;
+	margin-bottom: 10px;
+}
+.pingjia-div-o img{
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+}
+
+.pingjia-div-o h4{
+	float: left;
+	position: relative;
+	top:5px;
+	font-weight: normal;
+}
+
+ .pingjia-div-t{
+	overflow: hidden;
+	background: #fff;
+	padding: 10px;
+	/* margin-top: 10px; */
+	border-bottom: 1px solid #f0f0f0;
+ }
+
+.pingjia-div-t-l{
+	float: left;
+	position: relative;
+	top: 3px;
+	margin-right: 10px;
+}
+
+.df-div{
+	float: left;
+}
+
+.df-div span {
+	font-size: 30;
+	color: grey;
+}
+
+.df-div button {
+	position: absolute;
+	right: 10px;
+}
+
+.pingjia-div-tt{
+	background: #fff;
+	margin-top: 10px;
+	padding: 15px;
+}
+
+.pingjia-div-tt h4{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.cd-div{
+	border-bottom: 1px solid #f0f0f0;
+	padding: 20px 0px;
+}
+
+.cd-div .df-div{
+	position: relative;
+	left: -2px;
+	top: 5px;
+}

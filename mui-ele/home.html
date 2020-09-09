@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/home.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav header-bar">
+			<!-- <a class="mui-icon mui-icon-info mui-pull-left"></a> -->
+			<!-- <a class="mui-icon mui-icon-gear mui-pull-right "></a> -->
+			
+			<h1 class="mui-title">我的</h1>
+		</header>
+		
+		<div class="mui-content">
+			<div class="home-div">
+				<div class="home-div-top">
+					<div class="home-div-top-l">
+						<img src="images/head.jpg" id="head_img">
+					</div>
+					<!-- 登陆前 -->
+					<div class="home-div-top-r" id="login-event">
+						<h4>登陆/注册</h4>
+						<p>登陆后可享受更多特权</p>
+						<span class="mui-icon mui-icon-arrowright right-icon"></span>
+					</div>
+					
+					<!-- 登陆后 -->
+					<div class="home-div-top-r" id="login-succ" style="display: none;">
+						<h4>核桃仁</h4>
+						<p><span class="mui-icon mui-icon-phone"></span>123456789</p>
+						<span class="mui-icon mui-icon-arrowright right-icon"></span>
+					</div>
+				</div>
+				
+				<!-- 登陆前余额样式 -->
+				<div class="home-money">
+					<div class="home-money-l  public_click" >
+						<span class="mui-icon mui-icon-email icon-div"></span>
+						<h5>我的余额</h5>
+					</div>
+					<div class="home-money-r  public_click" >
+						<span class="mui-icon mui-icon-email icon-div"></span>
+						<h5>我的积分</h5>
+					</div>	
+				</div>
+				
+				<!-- 登陆后余额样式 -->
+				<!-- <div class="home-money">
+					<div class="home-money-l" >
+						<span class="big-txt o-txt">0.00</span><span class="small-txt">元</span>
+						<h5>我的余额</h5>
+					</div>
+					<div class="home-money-r" >
+						<span class="big-txt g-txt">0</span><span class="small-txt">分</span>
+						<h5>我的积分</h5>
+					</div>
+				</div> -->
+				
+				
+				<div class="home-list">
+					<div class="home-list-div public-list-txt">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">
+									<span class="mui-icon mui-icon-location list-l-icon"></span>
+									<span>收货地址</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">
+									<span class="mui-icon mui-icon-email list-l-icon"></span>
+									<span>我的通知</span>
+								</a>
+							</li>
+							
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">
+									<span class="mui-icon mui-icon-image list-l-icon"></span>
+									 <span>积分商城</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="home-list-div public-list-txt">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">
+									<span class="mui-icon mui-icon-email list-l-icon"></span>
+									<span>服务中心</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">
+									<span class="mui-icon mui-icon-email list-l-icon"></span>
+									<span>我是商家</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">
+									<span class="mui-icon mui-icon-image list-l-icon"></span>
+									 <span>设置</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/mui.js"></script>
+		<script src="js/castapp.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// mui.init()
+			ca.init();
+			
+			var login_event = ca.id('login-event') 
+			var login_succ = ca.id('login-succ')
+			var head_img = ca.id('head_img')
+			
+			login_event.addEventListener('tap',function(){
+				//跳转到登陆页
+				ca.newInterface({
+					url:"login.html",
+					id:"login",
+				})
+			})
+			
+			
+			//接收通知
+			ca.receiveNotice('update',function(){
+				get_user();
+			})
+			
+			//已登陆 获得用户信息
+			get_user();
+			function get_user(){
+				var request_url = localStorage.getItem("request_url")
+				var login_phone = localStorage.getItem("login_phone")
+				
+				if (!login_phone) {
+					
+					head_img.src = "images/head.jpg"
+					login_succ.style.display = 'none';
+					login_event.style.display = "block";
+					
+					return
+				}
+
+				//获得用户信息
+				ca.get({
+					url: request_url + "User/get_user",
+					data:{
+						phone_data:login_phone
+					},
+					succFn:function(data){
+						if (data) {
+							//转化json
+							var json = JSON.parse(data)
+							
+							localStorage.setItem('user_data',data)
+							
+							var user_info = login_succ.children
+							
+							if (json.headimg) {
+								head_img.src = json.headimg
+							} else {
+								head_img.src = "images/head.jpg"
+							}
+							
+							
+							//h4
+							if (json.nickname) {
+								user_info[0].innerHTML = json.nickname;
+							} else {
+								user_info[0].innerHTML = json.phone;
+							}
+							user_info[1].innerHTML = '<p><span class="mui-icon mui-icon-phone"></span>'+json.phone+'</p>';
+							login_succ.style.display = 'block';
+							login_event.style.display = "none";
+														
+						} else {
+							//没有值 登陆前
+							head_img.src = "images/head.jpg"
+							login_succ.style.display = 'none';
+							login_event.style.display = "block";
+						}
+					}
+				})
+			}
+			
+			//跳转到用户设置页面
+			login_succ.addEventListener('tap',function(){
+				ca.newInterface({
+					url:'user-information.html',
+					id:'user-information'
+				})
+			})
+			
+			var cell = ca.className('mui-table-view-cell')
+			
+			//收货地址
+			cell[0].addEventListener('tap',function(){
+				ca.newInterface({
+					url:"address.html",
+					id:'address'
+				})
+			})
+			
+			//我的通知
+			cell[1].addEventListener('tap',function(){
+				ca.newInterface({
+					url:"notice.html",
+					id:'notice'
+				})
+			})
+			
+			//积分商城
+			cell[2].addEventListener('tap',function(){
+				ca.newInterface({
+					url:"integral.html",
+					id:'integral'
+				})
+			})
+			
+			//服务中心
+			cell[3].addEventListener('tap',function(){
+				
+			})
+			
+			//我是商家
+			cell[4].addEventListener('tap',function(){
+				ca.newInterface({
+					url:"boss.html",
+					id:'boss'
+				})
+			})
+			
+			//设置
+			cell[5].addEventListener('tap',function(){
+				ca.newInterface({
+					url:"setting.html",
+					id:'setting'
+				})
+			})
+			
+			//我的余额 和 我的积分
+			
+			var click_div = ca.className('public_click');
+			click_div[0].addEventListener('tap',function(){
+				ca.newInterface({
+					url:"money.html",
+					id:"money"
+				})
+			})
+			
+			click_div[1].addEventListener('tap',function(){
+				ca.newInterface({
+					url:"integral.html",
+					id:"integral"
+				})
+			})
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">登陆</h1>
+			<!-- <button class="mui-btn-link mui-pull-right">注册</button> -->
+		</header>
+		<div class="mui-content">
+			<div class="public-margin-top">
+				<form class="mui-input-group" action="javascript:;">
+					<div class="mui-input-row">
+						<input type="text" class="mui-input-clear" placeholder="手机">
+					</div>
+					<div class="mui-input-row">
+						<input type="password" class="mui-input-password" placeholder="密码">
+					</div>
+				</form>
+				
+				<button class="public-g-btn btn-block" >登&nbsp;陆</button>
+				<div style="width: 90%; margin: 0 auto;">
+					<button class="mui-btn-link mui-pull-right link-btn" style="padding: 0px;">立即注册</button>
+					<button class="mui-btn-link mui-pull-left link-btn" style="padding: 0px;">忘记密码</button>
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/castapp.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			ca.init(false);
+			var request_url = localStorage.getItem("request_url")
+			
+			
+			var button = ca.tagName('button');
+			
+			var input = ca.tagName('input')
+			
+
+			//登陆
+			button['0'].addEventListener('tap',function(){
+
+				var phone = input['0'].value;
+				var password = input['1'].value;
+				
+				if (phone == "") {
+					ca.prompt("手机号码不能为空")
+					return
+				}
+				
+				if (password == "") {
+					ca.prompt("密码不能为空")
+					return;
+				}
+				
+				//请求数据库
+				ca.get({
+					url: request_url + 'Login/login_do',
+					data:{
+						phone_data:phone,
+						password_data:password,
+					},
+					succFn:function(data){
+						if (data == 1) {
+							ca.prompt("登陆成功");
+							localStorage.setItem("login_phone",phone)
+							
+							var arr = ['home']
+							ca.sendNotice(arr,"update",{})
+							
+							ca.closeCurrentInterface();
+							
+						} else if (data == 0){
+							ca.prompt("密码错误");
+						} else {
+							ca.prompt("手机号不存在")
+						}
+					}
+				})
+				
+			})
+			//去注册
+			button['2'].addEventListener('tap',function(){
+				ca.newInterface({
+					url:"reset-password.html",
+					id:"reset_password",
+				})
+			})
+			//忘记密码
+			button['1'].addEventListener('tap',function(){
+				ca.newInterface({
+					url:"register.html",
+					id:"register",
+				})
+			})
+
+		</script>
+	</body>
+
+</html>

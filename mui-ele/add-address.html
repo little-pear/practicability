@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/order.css"/>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">新增地址</h1>
+		</header>
+		
+		<div class="mui-content">
+			<div class="add-address-div">
+				<form class="mui-input-group public-lable-txt" action="javascript:;">
+					<div class="mui-input-row">
+						<label>联系人</label>
+						<input type="text" class="mui-input-clear" placeholder="你的姓名">
+					</div>
+					<div class="mui-input-row mui-radio">
+						<label>先生</label>
+						<input type="radio"/>
+					</div>
+					<div class="mui-input-row mui-radio">
+						<label>女士</label>
+						<input type="radio"/>
+					</div>
+					<div class="mui-input-row">
+						<label>联系电话</label>
+						<input type="text" class="mui-input-clear" placeholder="你的手机号">
+					</div>
+					<div class="mui-input-row">
+						<label>收货地址</label>
+						<input type="text" class="mui-input-clear" placeholder="小区/写字楼/学校">
+					</div>
+					<div >
+						<textarea id="text" placeholder="详细地址"></textarea>
+					</div>
+				</form>
+				<button id="btn" class="public-g-btn">确定</button>
+			</div>
+		</div>
+		
+		<script src="js/mui.js"></script>
+		<script src="js/castapp.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			ca.init()
+			
+			var input = ca.tagName('input');
+			var text = ca.id("text")
+			var btn = ca.id("btn")
+			
+			
+			btn.addEventListener('tap',function(){
+				var name = input[0].value;
+				var sex = ''
+				if (input[1].checked) {
+					sex = "男"
+				} else if(input[2].checked) {
+					sex = "女"
+				}
+				
+				var phone = input['3'].value;
+				var city = input['4'].value;
+				var address = text.value;
+				
+				
+				if (name == '') {
+					ca.prompt('联系人不能为空')
+					return
+				}
+				if (sex == '') {
+					ca.prompt('性别不能为空')
+					return
+				}
+				if (phone == '') {
+					ca.prompt('手机不能为空')
+					return
+				}
+				if (city == '' || address == "") {
+					ca.prompt('收货地址不能为空')
+					return
+				}
+				
+				var request_url = localStorage.getItem("request_url");
+				var login_phone = localStorage.getItem("login_phone")
+				
+				ca.get({
+					url: request_url + "User/add_address",
+					data:{
+						phone_data1:login_phone,
+						name_data:name,
+						sex_data:sex,
+						phone_data2: phone,
+						address_data:city+address
+						
+					},succFn:function(data){
+						
+						if (data == 0) {
+							ca.prompt("添加成功")
+							
+							//通知 address 刷新列表
+							
+							var arr = ['address']
+							ca.sendNotice(arr,"update",{})
+							
+							ca.closeCurrentInterface()
+						} else {
+							ca.prompt("添加失败")
+						}
+					},
+				})
+			})
+			
+			
+		</script>
+	</body>
+
+</html>

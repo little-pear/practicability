@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">充值</h1>
+		</header>
+		
+		<div class="mui-content">
+			<div class="cz-div">
+				<div class="public-list-txt public-margin-top">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<!-- <a class="mui-navigate-right"> -->
+								<span>充值金额:</span>
+								<!-- <span class="cz-right-txt mui-pull-right">50.00元</span> -->
+								<input id="money_input" type="text" style="margin-bottom: 0px; padding: 0px; width: 50%; float: right; text-align: right; height: 20px; line-height: 20px; border: 0px; position: relative; top:0px; font-size: 14px;" placeholder="请输入充值金额"/>
+							<!-- </a> -->
+						</li>
+					</ul>
+				</div>
+				<div class="pay-class">
+					<div class="public-list-txt">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a class="">
+									<span>请选择支付方式</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<!-- <a class=""> -->
+									<span>支付宝支付</span>
+									<input type="radio" class="mui-pull-right" style="position: relative; top:3px;" />
+								<!-- </a> -->
+							</li>
+							<li class="mui-table-view-cell">
+								<!-- <a class=""> -->
+									<span>微信支付</span>
+									<input type="radio" class="mui-pull-right" style="position: relative; top:3px;" />
+								<!-- </a> -->
+							</li>
+						</ul>
+					</div>
+				</div>
+				<button class="public-g-btn btn-block public-b-btn" id='btn'>确认充值</button>
+			</div>
+		</div>
+		
+		<script src="js/mui.js"></script>
+		<script src="js/castapp.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			
+			ca.init()
+			
+			var money_input = ca.id('money_input')
+			
+			var input = ca.className('mui-pull-right')
+			var btn = ca.id('btn');
+			
+			btn.addEventListener('tap',function(){
+				var money = money_input.value;
+				if (money == '') {
+					ca.prompt('请输入充值金额')
+					return
+				}
+				if (money < 0.000001 ) {
+					ca.prompt('充值金额不正确')
+					return
+				}
+				
+				if (!input[0].checked && !input[1].checked) {
+					ca.prompt('请选择支付方式')
+					return 
+				}
+				var str = "" 
+				//支付宝
+				if (input[0].checked) {
+// 					ca.pay({
+// 						name:'ele订单'+ca.getIdCode(10),
+// 						appid:"appid",
+// 						appkey:'appkey',
+// 						type:'alipay',
+// 						money:money,
+// 						succFn:function(){
+// 							alert("成功了")
+// 						}
+// 					})
+
+					str += '支付宝 充值' + money + "元"
+					
+				} else {
+					//微信
+					str += '微信 充值' + money + "元"
+
+				}
+				
+				
+				var request_url = localStorage.getItem('request_url')
+				var login_phone = localStorage.getItem('login_phone')
+				ca.get({
+					url:request_url + "User/plus_money",
+					data:{
+						phone_data:login_phone,
+						money_data: money
+					},
+					succFn:function(data){
+						if (data >= 0 ){
+							ca.prompt(str + ",充值成功")
+							
+							var user_json = JSON.parse(localStorage.getItem('user_data'))
+							user_json.money = data
+							localStorage.setItem('user_data', JSON.stringify(user_json))
+							
+							var arr = ["home","money"]
+							ca.sendNotice(arr,"update",{})
+							
+							setInterval(function(){
+								ca.closeCurrentInterface()
+							},1000)
+						} else{
+							ca.prompt("充值失败，联系客服")
+						}
+					}
+				})
+			})
+			
+		</script>
+	</body>
+
+</html>

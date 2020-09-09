@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/money.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav header-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">余额</h1>
+		</header>
+		
+		<div class="mui-content">
+			<div class="ye-div">
+				<div class="ye-div-b">
+					<p>当前余额</p>
+					<span class="o-txt" id="my-money">0.00</span> <span class="small-txt">元</span>
+					<div class="ye-button-div">
+						<button class="qx-bg">取现</button>
+						<button class="cz-bg">充值</button>
+					</div>
+				</div>
+			</div>
+						
+			<div class="ye-div-m">
+				<p>最近30天的收支明细</p>
+				<!-- 无收支明细样式 -->
+				<div class="ye-div-m-div info">
+					<span class="iconfont icon-dingdan"></span>
+					<h5>无收支明细</h5>
+				</div>
+				
+				<!-- 有收支明细 -->
+				<div class="ye-div-b-div info" style="display: none;">
+					<!-- <div style="border-bottom: 1px solid #E2E2E2; padding-bottom: 5px; margin-bottom: 7px;">
+						<div class="ye-div-b-div-o">
+							<span class="div-o-l">饿了么账户充值</span>
+							<span class="div-o-r">2016-03-21</span>
+						</div>
+						<div class="ye-div-b-div-t">
+							<span class="div-o-l div-b-l">余额:50</span>
+							<span class="div-o-r div-b-r">+50.00</span>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+					 -->
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/mui.js"></script>
+		<script src="js/castapp.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			ca.init();
+			
+			var my_money = ca.id("my-money")
+			var info = ca.className("info")
+			
+			ca.receiveNotice('update',function(){
+				get_money()
+			})
+			
+			get_money()
+			function get_money(){
+				var user_json = JSON.parse(localStorage.getItem('user_data'))
+				
+				
+				if (!user_json) {
+					
+					info['0'].style.display = "block";
+					info['1'].style.display = "none";
+					
+					return 
+				}
+				
+				// alert(JSON.stringify(user_json))
+				my_money.innerHTML = user_json.money
+				
+				//获得收支明细
+				var request_url = localStorage.getItem("request_url");
+				var login_phone = localStorage.getItem("login_phone")
+				
+				ca.get({
+					url: request_url + "User/get_log",
+					data:{
+						phone_data:login_phone
+					},succFn:function(data){
+						if (data) {
+							info['0'].style.display = "none";
+							info['1'].style.display = "block";
+							
+							var json = JSON.parse(data)
+							info['1'].innerHTML =""
+							for (var a in json) {
+								var dd = "";
+								
+								if (json[a].type == "plus") {
+									dd = '用户充值'
+									var f = "+"
+									var ye = json[a].money+json[a].old_money
+								} else if (json[a].type == "get") {
+									dd = '提现'
+									var ye = json[a].old_money-json[a].money
+									var f = "-"
+								} else {
+									dd = '花费'
+									var ye = json[a].old_money-json[a].money
+									var f = "-"
+								}
+								
+								// console.log(JSON.stringify(a))
+								var tmpl = '<div style="border-bottom: 1px solid #E2E2E2; padding-bottom: 5px; margin-bottom: 7px;">'
+											+'	<div class="ye-div-b-div-o">'
+											+'		<span class="div-o-l">'+dd +'</span>'
+											+'		<span class="div-o-r">'+json[a].cTime+'</span>'
+											+'	</div>'
+											+'	<div class="ye-div-b-div-t">'
+											+'		<span class="div-o-l div-b-l">余额:'+ye+'</span>'
+											+'		<span class="div-o-r div-b-r">'+f+json[a].money+'</span>'
+											+'	</div>'
+											+'	<div style="clear:both"></div>'
+											+'</div>';
+											
+								info['1'].innerHTML += tmpl
+							}
+							
+							
+						} else {
+							info['0'].style.display = "block";
+							info['1'].style.display = "none";
+						}
+					}
+				})
+			}
+			
+			
+			
+			var btn = ca.tagName('button');
+			//取现
+			btn['0'].addEventListener('tap',function(){
+				ca.newInterface({
+					url:"withdrawals.html",
+					id:'withdrawals'
+				})
+			})
+			
+			//充值
+			btn['1'].addEventListener('tap',function(){
+				ca.newInterface({
+					url:"pay.html",
+					id:'pay'
+				})
+			})
+		</script>
+	</body>
+
+</html>
