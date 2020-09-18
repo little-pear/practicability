@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PingFang SC","Microsoft Yahei",sans-serif;
+}
+
+main {
+    display: flex;
+    background-color: #2f3542;
+    /* ?水平方向居中对齐 */
+    align-items: center;
+    /* ?垂直方向居中对齐 */
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+    font-size: 5em;
+    font-weight: 300;
+}
+
+span.mark {
+    border-right: 2px solid white;
+    animation: blink .6s step-end infinite;
+}
+
+@keyframes blink {
+    from,
+    to {
+        /* ?把边框线设置为透明 */
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}
