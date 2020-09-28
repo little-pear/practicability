@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证码生成及校验</title>
+    <style>
+        .code_show {
+            height: 50px;
+        }
+        .code {
+            background-color: #eee;
+            padding: 15px 15px;
+            font-size: 30px;
+        }
+        a {
+            color: blue;
+            cursor: pointer;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="v_code">
+        <div class="code_show">
+            <span class="code" id="checkCode">ad456s</span>
+            <a id="linkbt">看不清换一张</a>
+        </div>
+        <div class="input_code">
+            <label for="inputCode">验证码：</label>
+            <input type="text" id="inputCode">
+            <span id="text-show"></span>
+        </div>
+        <input id="Button1" type="button" value="确定">
+    </div>
+    <script>
+        // 生成验证码
+        // 6位数 0-9 a-f 随机生成6位 内容必须是0-9 a-f 字符串
+        // 数组 下标 0、1、2...... 从数组当中，随机下标
+
+        // 进行验证 点击确定时，进行对比
+        window.onload = function() {
+            var res = getCode()
+            function getCode() {
+                var arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+                var str = ""
+                for (var i = 0;i < 6;i++) {
+                    var num = Math.round(Math.random() * (15 - 0) + 0)
+                    str += arr[num]
+                }
+                return str
+            }
+            document.getElementById('checkCode').innerText = res
+
+            document.getElementById('linkbt').onclick = function() {
+                document.getElementById('checkCode').innerText = getCode()
+            }
+
+            // 提交进行对比
+            document.getElementById('Button1').onclick = function() {
+                var code = document.getElementById('checkCode').innerText
+                var inputCode = document.getElementById('inputCode').value
+                if (code != inputCode) {
+                    alert('您输入的验证码不正确')
+                    document.getElementById('inputCode').value = ''
+                    return false
+                }
+            }
+        }
+    </script>
+</body>
+</html>
