@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>主页面</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			body {
+				background: url(img/bg.gif);
+			}
+
+			.big {
+				width: 760px;
+				height: auto;
+				margin: 0 auto;
+			}
+
+			.header {
+				width: 760px;
+				height: 303px;
+				background: url(img/header.jpg);
+			}
+
+			.sidebar {
+				width: 203px;
+				height: 420px;
+				background: url(img/sidebar_bg.jpg);
+				float: left;
+			}
+
+			.xian {
+				width: 160px;
+				height: 1px;
+				margin: 0 auto;
+				background: black;
+				margin-top: 20px;
+			}
+
+			.s1 {
+				width: 160px;
+				margin: 0 auto;
+				font-size: 14px;
+			}
+
+			.news {
+				width: 557px;
+				height: 420px;
+				background: url(img/news_header.jpg) no-repeat, url(img/news_bg.jpg);
+				float: left;
+			}
+
+			.n2 {
+				width: 150px;
+				height: auto;
+				float: left;
+				margin-top: 80px;
+				margin-left: 50px;
+			}
+
+			.n2 img {
+				border: 3px solid #EED8A7;
+			}
+
+			.n3 {
+				width: 300px;
+				height: auto;
+				float: left;
+				background: url(img/news_listbg.jpg);
+				margin-top: 60px;
+				
+			}
+			
+			.n4{
+				background: url(img/news_call.jpg);
+				width: 510px;
+				height: 34px;
+				margin: 0 auto;
+				margin-top: 370px;
+			}
+
+			.pics {
+				width: 760px;
+				height: 256px;
+				background: url(img/pics_bg.jpg);
+				float: left;
+			}
+			.p1{
+				width: 73px;
+				height: 246px;
+				float: left;
+			}
+			.p2{
+				width: 670px;
+				height: 156px;
+				float: left;
+			}
+			.p3{
+				width: 655px;
+				height: 91px;
+				background: url(img/pics_more.jpg);
+				float: left;
+			}
+			.baogao{
+				width: 760px;
+				height: 1000px;
+				background: url(img/cartoon_bg.jpg);
+			}
+			.cartoon{
+				width: 253px;
+				background: url(img/cartoon_bg.jpg);
+				float: left;
+			}
+			.daily{
+				width: 253px;
+				background: url(img/cartoon_bg.jpg);
+				float: left;
+			}
+			.tearoom{
+				width: 253px;
+				background: url(img/tearoom_bg.jpg);
+				float: left;
+			}
+			.sidebar ul {
+				list-style: none;
+				padding-left: 32px;
+			}
+			.sidebar a {
+				color: black;
+				font-size: 12px;
+				text-decoration: none;
+			}
+
+			 p {
+				font-size: 12px;
+				margin-top: 5px;
+			}
+
+			input {
+				font-size: 12px;
+				margin-top: 5px;
+			}
+			.news a{
+				color: goldenrod;
+				font-size: 12px;
+				text-decoration: none;
+			}
+			.news ul{
+				list-style: none;
+			}
+			.news li{
+				margin-top: -1px;
+			}
+			.news span{
+				float: right;
+				color: black;
+			}
+			.n4 p{
+				color: goldenrod;
+				font-size: 14px;
+				text-align: center;
+				line-height: 32px;
+			}
+			.p2 img{
+				border: 3px solid #EED8A7;
+			}
+			.baogao ul{
+				list-style: none;
+			}
+			.baogao li{
+				font-size: 14px;
+				margin-left: 15px;
+				color: goldenrod;
+			}
+			.footer{
+				width: 760px;
+				height: 100px;
+				margin: 0 auto;
+				background: url(img/pics_bg.jpg);
+				text-align: center;
+				font-size: 15px;
+				line-height: 40px;
+			}
+			.f1{
+				width: 760px;
+				height: 5px;
+				margin: 0 auto;
+				background: #EED8A7;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="big">
+			<div class="header"></div>
+			<div class="sidebar">
+				<img src="img/sidebar_header.jpg">
+				<ul>
+					<li><a href="#">· [美图] 鸣人结婚啦</a></li>
+					<li><a href="#">· [分享] 卡卡西求婚记</a></li>
+					<li><a href="#">· [恶搞] 这张图 谁告诉我这</a></li>
+					<li><a href="#">· [转帖] 忍者们の童年&少年</a></li>
+					<li><a href="#">· [转帖] 测试：火影中谁是你</a></li>
+				</ul>
+				<div class="xian"></div>
+				<div class="s1">
+					<p>1.为你喜爱的晓成员投下神圣的一票 (单选)</p>
+					<input type="radio" name="xuanpiao" /><span>俗套的老大-零</span><br />
+					<input type="radio" name="xuanpiao" /><span>玉面正太的蝎-玉女</span><br />
+					<input type="radio" name="xuanpiao" /><span>爆裂天使迪达拉-青龙</span><br />
+					<input type="radio" name="xuanpiao" /><span>同人女最爱的鼬-朱雀</span><br />
+					<input type="radio" name="xuanpiao" /><span>邪教自虐男飞段-三台</span><br />
+					<input type="radio" name="xuanpiao" /><span>水忍猛男鬼鲛-南斗</span><br />
+					<input type="radio" name="xuanpiao" /><span>五心上将角都-北斗</span><br />
+					<input type="submit" value="提交" style="margin-top: 15px;" />
+					<input type="button" value="重写" />
+					<input type="button" value="查看" />
+				</div>
+				<img src="img/sidebar_down.jpg">
+			</div>
+			<div class="news">
+				<div class="n2">
+					<img src="img/news_1.jpg">
+					<p>《火影》第364话情报:暗藏的宇志波一人~迷之阿飞</p>
+					<img src="img/news_2.jpg">
+					<p>火影华丽同人系列(晓一)</p>
+				</div>
+				<div class="n3">
+					<ul>
+						<li><a href="#"> ·《火影忍者》第364话：最终目的<span>[07-28]</span></a></li>
+						<li><a href="#"> ·《火影》第364话情报:暗藏的宇志波一人~<span>[07-27]</span></a></li>
+						<li><a href="#"> · 火影华丽同人系列(晓一)<span>[07-29]</span></a></li>
+						<li><a href="#"> ·《火影》第363话分析:老大背后的老大<span>[07-25]</span></a></li>
+						<li><a href="#"> ·《火影忍者》第363话：佐助之死<span>[07-21]</span></a></li>
+						<li><a href="#"> · 火影同人:宁井同人 <span>[07-28]</span></a></li>
+						<li><a href="#"> ·《火影》第363话情报:迪达拉死讯震惊晓达<span>[07-20]</span></a></li>
+						<li><a href="#"> · 火影同人:燃烧灰烬<span>[07-26]</span></a></li>
+						<li><a href="#"> · 火影同人:迪达拉同志的xxEnding(文艺版)<span>[07-24]</span></a></li>
+						<li><a href="#"> · 火影同人:东邪西毒(蝎视角)<span>[07-23]</span></a></li>
+						<li><a href="#"> ·《火影》第362话分析:战斗的抉择<span>[07-18]</span></a></li>
+						<li><a href="#"> ·《火影忍者》单行本第24卷<span>[07-17]</span></a></li>
+						<li><a href="#"> · 鹿丸的理想生活<span>[07-22]</span></a></li>
+						<li><a href="#"> ·《火影忍者》第362话：终极艺术<span>[07-14]</span></a></li>
+						<li><a href="#"> · E3 2007《火影忍者》次世代高清截图放出<span>[07-19]</span></a></li>
+					</ul>
+				</div>
+				<div class="n4">
+					<p>[动画]火影第213话 [漫画]火影忍者第335回：恐怖的秘密</p>
+				</div>
+				<img src="img/news_down.jpg">
+			</div>
+			<div class="pics">
+				<div class="p1">
+					<img src="img/pics_header.jpg">
+				</div>
+				<div class="p2">
+					<div id="pi1" style="float: left;margin-top: 10px;margin-left: 15px;" >
+						<img src="img/pics_1.jpg" >
+						<p>火影COSPLAY·回忆中の白</p>
+					</div>
+					<div id="pi2" style="float: left;margin-top: 10px;margin-left: 15px;">
+						<img src="img/pics_2.jpg" >
+						<p>《火影》另类个性图集</p>
+					</div>
+					<div id="pi3" style="float: left;margin-top: 10px;margin-left: 15px;">
+						<img src="img/pics_3.jpg" >
+						<p>《火影》同人爱恋畅想鹿</p>
+					</div>
+					<div id="pi4" style="float: left;margin-top: 10px;margin-left: 15px;">
+						<img src="img/pics_4.jpg" >
+						<p>火影同人秀之佐助</p>
+					</div>
+				</div>
+				<div class="p3">
+					<ul style="float: left;list-style: none;width: 320px;">
+						<li style="color: goldenrod;">· 火影华丽同人系列(晓一)<span style="color: black;float: right;">[07-29]</span></li>
+						<li style="color: goldenrod;">·《火影》另类个性图集<span style="color: black;float: right;">[07-09]</span></li>
+						<li style="color: goldenrod;">·《火影》同人爱恋畅想之鹿井篇<span style="color: black;float: right;">[06-16]</span></li>
+						<li style="color: goldenrod;">· 火影同人秀之佐助<span style="color: black;float: right;">[06-03]</span></li>
+					</ul>
+					<ul style="float: right;list-style: none;width: 320px;">
+						<li style="color: goldenrod;">· 洛克李同人画集<span style="color: black;float: right;">[06-03]</span></li>
+						<li style="color: goldenrod;">· 精美同人图赏汇<span style="color: black;float: right;">[07-29]</span></li>
+						<li style="color: goldenrod;">· 笔下“鼬”生辉<span style="color: black;float: right;">[07-09]</span></li>
+						<li style="color: goldenrod;">· 精选同人佐助图<span style="color: black;float: right;">[06-16]</span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="baogao">
+				<div class="cartoon">
+					<img src="img/cartoon_header.jpg" >
+					<ul>
+						<li>·《火影忍者》第364话：最终目的</li>
+						<li>·《火影忍者》第363话：佐助之死</li>
+						<li>·《火影忍者》单行本第24卷</li>
+						<li>·《火影忍者》第362话：终极艺术</li>
+						<li>·《火影忍者》第361话：弱点</li>
+						<li>·《火影忍者》第360话：迦楼罗</li>
+						<li>·《火影忍者》单行本第23卷</li>
+						<li>·《火影忍者》第359话：眼睛</li>
+						<li>·《火影忍者》第358话：穷追猛打</li>
+						<li>·《火影忍者》第357话:迪达斯VS佐助</li>
+						<li>·《火影忍者》单行本第22卷</li>
+						<li>·《火影忍者》第356话：激战…!</li>
+						<li>·《火影忍者》第355话：去向</li>
+						<li>·《火影忍者》第354话：开始行动的</li>
+						<li>·《火影忍者》第353话：“晓”集合</li>
+					</ul>
+					<img src="img/cartoon_down.jpg" >
+				</div>
+				<div class="daily">
+					<img src="img/daily_header.jpg" >
+					<ul>
+						<li>·《火影忍者》第364话：最终目的</li>
+						<li>·《火影忍者》第363话：佐助之死</li>
+						<li>·《火影忍者》单行本第24卷</li>
+						<li>·《火影忍者》第362话：终极艺术</li>
+						<li>·《火影忍者》第361话：弱点</li>
+						<li>·《火影忍者》第360话：迦楼罗</li>
+						<li>·《火影忍者》单行本第23卷</li>
+						<li>·《火影忍者》第359话：眼睛</li>
+						<li>·《火影忍者》第358话：穷追猛打</li>
+						<li>·《火影忍者》第357话:迪达斯VS佐助</li>
+						<li>·《火影忍者》单行本第22卷</li>
+						<li>·《火影忍者》第356话：激战…!</li>
+						<li>·《火影忍者》第355话：去向</li>
+						<li>·《火影忍者》第354话：开始行动的</li>
+						<li>·《火影忍者》第353话：“晓”集合</li>
+					</ul>
+					<img src="img/cartoon_down.jpg" >
+				</div>
+				<div class="tearoom">
+					<img src="img/tearoom_header.jpg" >
+					<ul>
+						<li>·《火影忍者》第364话：最终目的</li>
+						<li>·《火影忍者》第363话：佐助之死</li>
+						<li>·《火影忍者》单行本第24卷</li>
+						<li>·《火影忍者》第362话：终极艺术</li>
+						<li>·《火影忍者》第361话：弱点</li>
+						<li>·《火影忍者》第360话：迦楼罗</li>
+						<li>·《火影忍者》单行本第23卷</li>
+						<li>·《火影忍者》第359话：眼睛</li>
+						<li>·《火影忍者》第358话：穷追猛打</li>
+						<li>·《火影忍者》第357话:迪达斯VS佐助</li>
+						<li>·《火影忍者》单行本第22卷</li>
+						<li>·《火影忍者》第356话：激战…!</li>
+						<li>·《火影忍者》第355话：去向</li>
+						<li>·《火影忍者》第354话：开始行动的</li>
+						<li>·《火影忍者》第353话：“晓”集合</li>
+					</ul>
+					<img src="img/tearoom_down.jpg" >
+				</div>
+			</div>
+			<div class="footer">
+				&copy;太平洋游戏网专题--火影忍者
+			</div>
+			<div class="f1">
+				
+			</div>
+		</div>
+	</body>
+</html>
