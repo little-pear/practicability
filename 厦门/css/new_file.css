@@ -1,0 +1,250 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background-image: url(../img/beijing.jpg);
+	background-repeat: no-repeat;
+	height: 620px;
+	width: 100%;
+}
+
+#nav{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+ul{
+	list-style: none;
+}
+
+#nav li{
+    float: left;
+    width:100px;
+    position: relative;
+}
+
+#nav2 li{
+	float: left;
+	width: 150px;
+}
+#nav a{
+	display: block;
+	font-size: 14px;
+	width: 100px;
+	height: 26px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	border-bottom: 1px yellow solid;
+	line-height: 26px;
+}
+
+#nav ul{
+	display: none;
+	position: absolute;
+	top: 28px;
+	background: white;
+}
+
+#nav li:hover ul{
+	display: block;
+}
+
+#nav li a:hover{
+	color:yellow;
+}
+
+#nav li:hover ul li{
+	display: block;
+}
+
+#tu{
+	background-image: url(../img/滚播图.jpg);
+	width: 939px;
+	height: 359px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+#main{
+	background-color: white;
+	width: 939px;
+	height: 400px;
+	margin: 0 auto;
+}
+
+#main #left{
+	width: 300px;
+	font-size: 13px;
+	float: left;
+}
+
+#main #left em{
+	font-size: 14px;
+	font-style: normal;
+}
+#main #left #xian1{
+	background-color: yellow;
+	height: 2px;
+	margin-top: 8px;
+}
+
+#main #left p{
+	margin-top: 10px;
+}
+
+#main #left a{
+	color: black;
+	text-decoration: none;
+}
+
+#main #zhong{
+	width: 320px;
+	height: 200px;
+	font-size: 13px;
+	float: left;
+	margin-left: 10px;
+}
+
+#main #zhong em{
+	font-size: 14px;
+	font-style: normal;
+}
+#main #zhong #xian2{
+	background-color: yellow;
+	height: 2px;
+	margin-top: 8px;
+}
+
+#container1{
+	width:320px;
+	height:100px;
+}
+#photo1{
+	width:160px;
+	height:100px;
+	float:left;
+}
+#text1{
+	width:160px;
+	height:100px;
+	font-size: 13px;
+	float: left;
+}
+#text1 a{
+	color: black;
+	text-decoration: none;
+}
+#container2{
+	width:320px;
+	height:100px;
+}
+#photo2{
+	width:160px;
+	height: 100px;
+	float:left;
+	margin-top: 40px;
+}
+#text2{
+	width:160px;
+	height:100px;
+	font-size: 13px;
+	float: left;
+	margin-top: 40px;
+}
+#text2 a{
+	color: black;
+	text-decoration: none;
+}
+
+#main #right{
+	width: 290px;
+	font-size: 13px;
+	float: right;
+	height: 300px;
+}
+
+#main #right em{
+	font-size: 14px;
+	font-style: normal;
+}
+#main #right #xian3{
+	background-color: yellow;
+	height: 2px;
+	margin-top: 25px;
+}
+
+#main #right #bei{
+	background-color: #eff0f5;
+	width: 290px;
+	height: 320px;
+	margin-top: 1px;
+}
+
+#main #right #bei a{
+	color: black;
+	text-decoration: none;
+}
+
+#main #right #bei p{
+	margin-top: 7px;
+}
+
+#t{
+	width: 939px;
+	height: 200px;
+	border-collapse: collapse;
+}
+
+#biaoge a{
+	color: black;
+	text-decoration: none;
+}
+
+#foot{
+	background-color: #066baf;
+	width: 100%;
+	height: 150px;
+	margin-top: 5px;
+}
+
+#foot #foot1{
+	height: 150px;
+	font-size: 14px;
+	color: white;
+}
+
+#foot #foot1 #foot2{
+	float: left;
+	height: 150px;
+	margin-left: 300px;
+	margin-top: 25px;
+}
+
+#foot #foot1 #foot3{
+	float: right;
+	height: 150px;
+	margin-right: 300px;
+}
+
+#foot #foot1 #foot3 a{
+	color: white;
+	text-decoration: none;
+}
+
+#end{
+	background-color: #0a3f76;
+	width: 100%;
+	height: 50px;
+}
+
+#end #end1{
+	color: white;
+	font-size: 14px;
+	width: 769px;
+	float: right;
+	height: 50px;
+	line-height: 50px;
+}
