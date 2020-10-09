@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <style type="text/css">
+    	*{
+    		touch-action: pan-y;
+    	}
+    	
+    	.dibu{
+    		width: 100%;
+    		position: fixed;
+    		bottom: 50px;
+    	}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav" style="height: 45px;">
+	    <a href="setting.html" style="font-size: 18px;line-height: 45px;">
+			设置
+		</a>
+	    <h1 class="mui-title">企业管理系统</h1>
+	</header>
+	<nav class="mui-bar mui-bar-tab" style="font-weight: bold;">
+	    <a class="mui-tab-item mui-active" href="#dongtai">
+	        <span class="mui-tab-label">动态</span>
+	    </a>
+	    <a class="mui-tab-item" href="#daka">
+	        <span class="mui-tab-label">打卡</span>
+	    </a>
+	    <a class="mui-tab-item" href="#chaxun">
+	        <span class="mui-tab-label">查询</span>
+	    </a>
+	    <a class="mui-tab-item" href="#liuyanban">
+	        <span class="mui-tab-label">留言板</span>
+	    </a>
+	</nav>
+	<div class="mui-content">
+	    <div id="dongtai" class="mui-control-content mui-active">
+	    	<ul class="mui-table-view">
+	    	    <li class="mui-table-view-cell">
+	    	        <span style="float: left;">公司动态</span>
+	    	        <a href="gongsidongtai.html" style="float: right;">more</a>
+	    	        <br><br><br><br>
+	    	    </li>
+	    	    <li class="mui-table-view-cell">
+	    	        <span style="float: left;">部门动态</span>
+	    	        <a href="bumendongtai.html" style="float: right;">more</a>
+	    	        <br><br><br><br>
+	    	    </li>
+	    	</ul>
+		</div>
+		<div id="daka" class="mui-control-content" style="text-align: center;margin-top: 10px;">
+			<br>
+			<span>打卡是每天必做的事情</span><br><br>
+			<button id="xinxi" type="button" class="mui-btn mui-btn-blue mui-btn-outlined" style="width: 55%;">打卡</button><br>
+			<br>
+			<span>若要查看打卡记录，需要先进行打卡呦!</span>
+			<ul class="mui-table-view dibu">
+			    <li class="mui-table-view-cell">
+			        <a id="dakajilu">打卡记录</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a href="qingjia.html">请假区</a>
+			    </li>
+			</ul>
+		</div>
+		<div id="chaxun" class="mui-control-content" style="text-align: center;">
+			<ul class="mui-table-view">
+			        <li class="mui-table-view-cell">
+			        	<a href="renyuanchaxun.html">人员查询</a>
+			        </li>
+			        <li class="mui-table-view-cell">
+			        	<a href="shangpinchaxun.html">商品查询</a>
+			        </li>
+			    </ul>
+		</div>
+		<div id="liuyanban" class="mui-control-content">
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell">
+			                      姓名：<span id="xm1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;评论时间:<span id="shijian1"></span><br>
+
+			                      评论内容：<span id="pl1"></span>
+			    </li>
+			    <li class="mui-table-view-cell">
+			                      姓名：<span id="xm2"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;评论时间:<span id="shijian2"></span><br>
+
+			                      评论内容：<span id="pl2"></span>
+			    </li>
+			    <li class="mui-table-view-cell">
+			                      姓名：<span id="xm3"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;评论时间:<span id="shijian3"></span><br>
+
+			                      评论内容：<span id="pl3"></span>
+			    </li>
+			    <li class="mui-table-view-cell">
+			                      姓名：<span id="xm4"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;评论时间:<span id="shijian4"></span><br>
+
+			                      评论内容：<span id="pl4"></span>
+			    </li>
+			</ul>
+			
+			<ul class="mui-table-view dibu">
+			        <li class="mui-table-view-cell">
+			        	<label>姓名：</label><br>
+			        	<input id="inxingming" type="text" />
+			        </li>
+			        <li class="mui-table-view-cell">
+			        	<label>评论时间：</label><br>
+			        	<input id="inshijian" type="text" />
+			        </li>
+			        <li class="mui-table-view-cell">
+			        	<label>评论内容：</label><br>
+			        	<input id="inneirong" type="text" />
+			        </li>
+			        				    <li class="mui-table-view-cell">
+				    	<input id="tianjialiuyan" type="button" value="提交留言" />
+				    	<input id="xiugailiuyan" type="button" value="修改留言"  style="float: right;"/>
+				    </li>
+			    </ul>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" charset="utf-8">
+	//获取原始窗口的高度
+	var originalHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+	window.onresize = function() {
+
+		//软键盘弹起与隐藏  都会引起窗口的高度发生变化
+		var resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+		if(resizeHeight * 1 < originalHeight * 1) { //resizeHeight<originalHeight证明窗口被挤压了
+
+			plus.webview.currentWebview().setStyle({
+				height: originalHeight
+			});
+
+		}
+	}
+    mui.init({
+		swipeBack:true //启用右滑关闭功能
+	});
+	//打卡
+	document.getElementById('xinxi').addEventListener('tap',function(){
+		mui.alert('打卡成功!', '生活愉快!');
+	    var myDate = new Date();
+	    var mytime=myDate.toLocaleString();
+	    mui.plusReady(function() {
+	 	document.getElementById('dakajilu').addEventListener('tap',function(){
+	 		mui.openWindow({
+	 			url:'dakajilu.html',
+	 			id:'dakajilu.html',
+	 			extras:{mytime:mytime}
+	 		});
+	 	});
+        });
+	});
+	window.addEventListener('refresh', function(e){//执行刷新
+                  location.reload();
+   });
+    var liuyan = [
+        {'xm' : '张三' , 'shijian' : '2020-03-15' , 'neirong' : '希望公司培训多多开展'},
+        {'xm' : '李四' , 'shijian' : '2020-04-06' , 'neirong' : '感谢公司给予的机会'},
+        {'xm' : '王麻子' , 'shijian' : '2020-04-09' , 'neirong' : '希望公司能发展的更快'}
+    ];
+    document.getElementById('xm1').innerHTML = liuyan[0].xm;
+    document.getElementById('shijian1').innerHTML = liuyan[0].shijian;
+    document.getElementById('pl1').innerHTML = liuyan[0].neirong;
+    
+    document.getElementById('xm2').innerHTML = liuyan[1].xm;
+    document.getElementById('shijian2').innerHTML = liuyan[1].shijian;
+    document.getElementById('pl2').innerHTML = liuyan[1].neirong;
+    
+    document.getElementById('xm3').innerHTML = liuyan[2].xm;
+    document.getElementById('shijian3').innerHTML = liuyan[2].shijian;
+    document.getElementById('pl3').innerHTML = liuyan[2].neirong;
+    
+    document.getElementById('tianjialiuyan').addEventListener('tap',function(){
+    	var inxingming = document.getElementById('inxingming').value;
+    	var inshijian = document.getElementById('inshijian').value;
+    	var inneirong = document.getElementById('inneirong').value;
+    	document.getElementById('xm4').innerHTML = inxingming;
+    	document.getElementById('shijian4').innerHTML = inshijian;
+    	document.getElementById('pl4').innerHTML = inneirong;
+    	document.getElementById('tianjialiuyan').disabled=true;
+    })
+    document.getElementById('xiugailiuyan').addEventListener('tap',function(){
+    	document.getElementById('tianjialiuyan').disabled=false;
+    })
+</script>
+</html>

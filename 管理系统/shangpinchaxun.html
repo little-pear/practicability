@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			*{
+				touch-action: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">商品查询</h1>
+		</header>
+		<div class="mui-content">
+		    <div style="margin-top: 20px;">
+		        <input id="neirong" type="search" placeholder="搜索框" style="background: white;width: 80%;">
+		        <button id="sousuo" type="button" class="mui-btn mui-btn-blue">搜索</button>
+		    </div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			
+			var shangpin = [
+			    {'fruit' : '苹果'},
+			    {'fruit' : '橘子'},
+			    {'fruit' : '火龙果'},
+			    {'fruit' : '香蕉'},
+			    {'fruit' : '梨'},
+			    {'fruit' : '榴莲'},
+			];
+			document.getElementById('sousuo').addEventListener('tap',function(){
+				var neirong = document.getElementById('neirong').value;
+				if(neirong == shangpin[0].fruit || neirong == shangpin[1].fruit || neirong == shangpin[2].fruit || neirong == shangpin[3].fruit || neirong == shangpin[4].fruit || neirong == shangpin[5].fruit){
+					mui.alert(neirong,'该商品为');
+				}else{
+					mui.alert('查无此商品');
+				}
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			*{
+				touch-action: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">人员查询</h1>
+		</header>
+		<div class="mui-content">
+		    <div style="margin-top: 20px;">
+		        <input id="neirong" type="search" placeholder="搜索框" style="background: white;width: 80%;">
+		        <button id="sousuo" type="button" class="mui-btn mui-btn-blue">搜索</button>
+		    </div>
+		    <br><br><br><br><br>
+		    <button id="renli" type="button" class="mui-btn mui-btn-blue mui-btn-outlined" style="width: 100%;">人力部门</button>
+		    <br><br><br>
+		    <button id="xingzheng" type="button" class="mui-btn mui-btn-green mui-btn-outlined" style="width: 100%;">行政部门</button>
+		    <br><br><br>
+		    <button id="caiwu" type="button" class="mui-btn mui-btn-danger mui-btn-outlined" style="width: 100%;">财务部门</button>
+		    <br><br><br>
+		    <button id="shouhou" type="button" class="mui-btn mui-btn-yellow mui-btn-outlined" style="width: 100%;">售后部门</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+//			mui.back=function(){
+//				mui.openWindow('index.html');
+//				mui.trigger(document.getElementById('chaxun'),'touchstart');
+//              mui.trigger(document.getElementById('chaxun'),'tap');
+//			} 
+            var ren = [
+			    {'xm' : '张三','danwei' : '人力部门'},
+			    {'xm' : '李四','danwei' : '行政部门'},
+			    {'xm' : '王麻子','danwei' : '财务部门'}
+		    ];
+            document.getElementById('sousuo').addEventListener('tap',function(){
+
+            	var neirong = document.getElementById('neirong').value;
+            	if(neirong == ren[0].xm || neirong == ren[1].xm || neirong == ren[2].xm){
+            		mui.alert(neirong,'工作人员名字是');
+            	}else{
+            		mui.alert('没有查到此工作人员');
+            	}
+            })
+            document.getElementById('renli').addEventListener('tap',function(){
+            	if(ren[0].danwei == '人力部门'){
+            		mui.alert(ren[0].xm,'该部门人员有');
+            	}else{
+            		mui.alert('该部门没有工作人员');
+            	}
+            })
+            document.getElementById('xingzheng').addEventListener('tap',function(){
+            	if(ren[1].danwei == '行政部门'){
+            		mui.alert(ren[1].xm,'该部门人员有');
+            	}else{
+            		mui.alert('该部门没有工作人员');
+            	}
+            })
+            document.getElementById('caiwu').addEventListener('tap',function(){
+            	if(ren[2].danwei == '财务部门'){
+            		mui.alert(ren[2].xm,'该部门人员有');
+            	}else{
+            		mui.alert('该部门没有工作人员');
+            	}
+            })
+            document.getElementById('shouhou').addEventListener('tap',function(){
+            	if(ren[0].danwei == '售后部门'){
+            		mui.alert(ren[0].xm,'该部门人员有');
+            	}else{
+            		mui.alert('该部门没有工作人员');
+            	}
+            })
+		</script>
+	</body>
+
+</html>

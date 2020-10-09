@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			*{
+				touch-action: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a href="index.html" class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">个人中心</h1>
+		</header>
+		<div class="mui-content">
+		    <ul class="mui-table-view">
+		        <li class="mui-table-view-cell mui-collapse mui-active">
+		            <a class="mui-navigate-right" href="#">个人信息</a>
+		            <div class="mui-collapse-content">
+		                <form class="mui-input-group">
+		                    <div class="mui-input-row">
+		                        <label>姓名</label>
+		                        <input type="text" class="mui-input-clear" placeholder="张三">
+		                    </div>
+		                    <div class="mui-input-row">
+		                        <label>年龄</label>
+		                        <input type="number" class="mui-input-clear" placeholder="18">
+		                    </div>
+		                    <div class="mui-input-row">
+		                        <label>性别</label>
+		                        <input type="text" class="mui-input-clear" placeholder="男">
+		                    </div>
+		                </form>
+		            </div>
+		        </li>
+		        <li class="mui-table-view-cell mui-collapse">
+		            <a class="mui-navigate-right" href="#">更改密码</a>
+		            <div class="mui-collapse-content">
+		            	<form class="mui-input-group">
+		                <div class="mui-input-row">
+		                    <label>原密码</label>
+		                    <input type="password" class="mui-input-password" placeholder="原密码">
+		                </div>
+		                <div class="mui-input-row">
+		                    <label>新密码</label>
+		                    <input type="password" class="mui-input-password" placeholder="新密码">
+		                </div>
+		                <div class="mui-input-row">
+		                    <label>确认密码</label>
+		                    <input type="password" class="mui-input-password" placeholder="确认密码">
+		                </div>
+		                </form>
+		            </div>
+		        </li>
+		    </ul>
+		    <ul class="mui-table-view" style="margin-top: 50px;">
+				<li class="mui-table-view-cell" style="text-align: center;">
+					<a>账号注销</a>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

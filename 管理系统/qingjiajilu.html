@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			*{
+				touch-action: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">请假记录</h1>
+		</header>
+		<div class="mui-content">
+		    <ul class="mui-table-view">
+		        <li class="mui-table-view-cell" id="jilu1">
+		        </li>
+		        <li class="mui-table-view-cell" id="jilu2">
+		        </li>
+		    </ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				beforeback: function() {　　　　
+                   
+                    var list = plus.webview.currentWebview().opener();　　　　
+                        //refresh是A页面自定义事件
+                    mui.fire(list, 'refresh');
+                        //返回true,继续页面关闭逻辑
+                    return true;
+                }
+			})
+			mui.plusReady(function(){
+	            var sData = plus.webview.currentWebview();
+//				mui.toast(sData.mytime);
+				var mytime = sData.mytime;
+				var yuanyin = sData.yuanyin;
+				document.getElementById('jilu1').innerHTML = yuanyin;
+				document.getElementById('jilu2').innerHTML = mytime;
+            });
+		</script>
+	</body>
+
+</html>
