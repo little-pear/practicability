@@ -1,0 +1,540 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			#slider {
+				margin-top: 30px;
+			}
+			
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+			
+			.mui-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+			
+			.mui-bar~.mui-pull-top-tips {
+				top: 24px;
+			}
+			
+			.mui-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+			
+			.mui-pull-top-tips.mui-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+			
+			.mui-pull-top-tips .mui-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+				margin: 0;
+			}
+			
+			.mui-pull-top-wrapper .mui-icon,
+			.mui-pull-top-wrapper .mui-spinner {
+				margin-top: 7px;
+			}
+			
+			.mui-pull-top-wrapper .mui-icon.mui-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+			
+			.mui-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+				margin-bottom: 50px;
+			}
+			
+			.mui-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				border-radius: 40px;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+			
+			.mui-pull-top-canvas canvas {
+				width: 40px;
+			}
+			
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+			}
+			
+			.shoucang {
+				width: 100%;
+				margin: 0 auto;
+				height: 25px;
+				margin-top: 20px;
+			}
+			
+			.shoucang p {
+				float: left;
+				color: black;
+				font-size: 16px;
+				margin-left: 20px;
+				font-weight: bold;
+			}
+			
+			.shoucang span {
+				float: right;
+				margin-right: 20px;
+			}
+			
+			.shoucang a {
+				color: gray;
+				text-decoration: none;
+			}
+			
+			.shujia {
+				margin-top: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-input-row mui-search mui-plus-visible">
+			<input id="search" type="search" class="mui-input-speech mui-input-clear" placeholder="搜索或输入网址">
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							推荐
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							免费小说
+						</a>
+						<a class="mui-control-item" href="#item3mobile">
+							美食
+						</a>
+						<a class="mui-control-item" href="#item4mobile">
+							搞笑
+						</a>
+						<a class="mui-control-item" href="#item5mobile">
+							游戏
+						</a>
+						<a class="mui-control-item" href="#item6mobile">
+							辟谣
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<a href="sp1.html"><img src="img/p1.jpg" /></a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="sp2.html"><img src="img/p2.jpg" /> </a>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">公认最"坏牙"的4种水果:它排第一,全吃过的敬你是条汉子!</p>
+										<img src="img/meishi10.png" />
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">同样是演"痞子",张一山A级,陈小春S级,最后一个隔着屏幕都觉得害怕!</p>
+										<img src="img/gaoxiao3.png" />
+										<p>兰姐看娱乐&nbsp;201评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">这些美食明明是中国菜,却因为名字,大部分人误认为是中国菜!</p>
+										<img src="img/meishi3.png" />
+										<p>柠檬美食&nbsp;10评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">绝地求生:暴露菜鸟和大神实力的选择,全选对肯定是资深老玩家</p>
+										<img src="img/youxi1.png" />
+										<p>天青色等电影&nbsp;16评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">兄弟你的M4配件用对了么?该选垂直还是轻型,职业选手教你怎么选</p>
+										<img src="img/youxi5.png" />
+										<p>天青色等电影&nbsp;11评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<img src="img/piyao0.png"/ style="width: 40px;height: 20px;">
+										<span style="font-size: 20px;color: black;">猫只有感觉到愉悦的时候才会打呼噜?不,害怕的时候也会</span>
+										<img src="img/piyao4.png" />
+										<p>往昔云烟&nbsp;1评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">28皮肤碎片该换谁?年年有余手感一般,而它堪比史诗级皮肤</p>
+										<img src="img/youxi10.png" />
+										<p>玫娱两三年&nbsp;10评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">心理学:凭第一直觉,哪个破盘子是假的?测你智商的高低!</p>
+										<img src="img/gaoxiao4.png" />
+										<p>社会扒一扒&nbsp;6评</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content" style="background: white;">
+						<div class="mui-scroll-wrapper">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<div class="shoucang">
+										<p>我的收藏</p>
+										<span><a href="#">查看全部&nbsp;&nbsp;&gt;</a></span>
+									</div>
+									<div class="shujia">
+										<img src="img/kongshujia.jpg" / style="width: 60%;margin-left: 90px;">
+										<img src="img/mingtianxia.jpg" / style="width: 100%;">
+										<img src="img/4_11.jpg" / style="width: 80%;margin-left: 40px;">
+									</div>
+									<div class="shoucang">
+										<p>猜你喜欢</p>
+										<span><a href="#">换一换</a></span>
+									</div>
+									<div class="">
+										<img src="img/dianzishu.jpg" />
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">心理学:假如只有10块,你会买哪种小吃?测你什么时候能暴富!</p>
+										<img src="img/meishi1.png" />
+										<p>牛牛聊吧&nbsp;6评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">穷吃VS富吃,馒头还好,泡面还好,看到饺子间的差距:想要有钱</p>
+										<img src="img/meishi2.png" />
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">这些美食明明是中国菜,却因为名字,大部分人误认为是中国菜!</p>
+										<img src="img/meishi3.png" />
+										<p>柠檬美食&nbsp;10评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">吃牛排之前先给你一份面包,并不是服务员搞错了,别再因为不知道被嘲笑了</p>
+										<img src="img/meishi4.png" />
+										<p>娱乐新天地君&nbsp;26评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">青岛市最土豪的餐厅一顿要多少钱?青岛市土豪餐厅完整"名单"及"排行榜"公示!</p>
+										<img src="img/meishi5.png" />
+										<p>与你倒数&nbsp;9评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">厨娘还原《海绵宝宝》的蟹黄堡,第一眼:好认真啊,成品:口水"流"出来了</p>
+										<img src="img/meishi6.png" />
+										<p>闯荡世界&nbsp;8评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">肯德基员工揭秘:这4样食物可别点,小心老板当你"傻",量少味差不实惠</p>
+										<img src="img/meishi7.png" />
+										<p>静若繁花花&nbsp;4评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">脾虚胃虚的,每天拿"它"当零食吃,修护胃粘膜,还能润肺止咳!</p>
+										<img src="img/meishi8.png" />
+										<p>美食杰营养课堂&nbsp;5评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">美国人痛恨的食物,在中国却成了美食,你吃过吗?</p>
+										<img src="img/meishi9.png" />
+										<p>小望爱旅行&nbsp;22评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">公认最"坏牙"的4种水果:它排第一,全吃过的敬你是条汉子!</p>
+										<img src="img/meishi10.png" />
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">马云来真的了!花呗封号条件再次被确认,碰到就停封</p>
+										<img src="img/gaoxiao1.jpg" />
+										<p>风一样的女人职场说</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">那个和支付宝撞名的大爷,曾想起诉阿里,如今成了这样</p>
+										<img src="img/gaoxiao2.jpg" />
+										<p>可乐御风</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">同样是演"痞子",张一山A级,陈小春S级,最后一个隔着屏幕都觉得害怕!</p>
+										<img src="img/gaoxiao3.png" />
+										<p>兰姐看娱乐&nbsp;201评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">心理学:凭第一直觉,哪个破盘子是假的?测你智商的高低!</p>
+										<img src="img/gaoxiao4.png" />
+										<p>社会扒一扒&nbsp;6评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">5种生物死后的骨架,大熊猫是真的可怕,完全失去了生前的憨态</p>
+										<img src="img/gaoxiao5.png" />
+										<p>大斌历史&nbsp;790评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">有种"整容"叫做活佛济公的必清,如今留长发戴眼镜,38岁像20岁</p>
+										<img src="img/gaoxiao6.png" />
+										<p>灼伤的心情&nbsp;98评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">女生:"我累了",钢铁直男才回"抱抱",试试这3回复打动她</p>
+										<img src="img/gaoxiao7.png" />
+										<p>碧海潮生生蝶梦&nbsp;104评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">《庆余年》中最神秘角色!毫无戏份,却凭一己之力带出四大宗师</p>
+										<img src="img/gaoxiao8.png" />
+										<p>伍脊六兽&nbsp;85评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">《家有儿女》10年前VS后,认出关晓彤,却没发现"寸头的包贝尔"!</p>
+										<img src="img/gaoxiao9.png" />
+										<p>撩汉漫画IL&nbsp;86评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">女生发"早呀",直男才回"早",高情商的人:看了文章就秒懂了</p>
+										<img src="img/gaoxiao10.png" />
+										<p>水清云淡一段浊&nbsp;24评</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item5mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">绝地求生:暴露菜鸟和大神实力的选择,全选对肯定是资深老玩家</p>
+										<img src="img/youxi1.png" />
+										<p>天青色等电影&nbsp;16评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">放走张大仙,花2亿力捧骚白?看到其一周收入后,斗鱼后悔惨了!</p>
+										<img src="img/youxi2.png" />
+										<p>游戏资讯帝&nbsp;118评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">初中生cos貂蝉,看到她"火焰袜"那一刻,网友:腿不会痛吗?</p>
+										<img src="img/youxi3.png" />
+										<p>跨越亲情的动漫&nbsp;18评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">"腐团儿"画风突变化身"拉拉队长",网友:比湖人的啦啦队还要美</p>
+										<img src="img/youxi4.png" />
+										<p>提莫聊游戏&nbsp;2评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">兄弟你的M4配件用对了么?该选垂直还是轻型,职业选手教你怎么选</p>
+										<img src="img/youxi5.png" />
+										<p>天青色等电影&nbsp;11评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">周淑怡模仿巴西女辅助:看到第三张照片直接认输!</p>
+										<img src="img/youxi6.png" />
+										<p>格格巫&nbsp;33评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">我的世界:餐桌出现满桌	mc食物,大神神P图的后果真的遭不住啊!</p>
+										<img src="img/youxi7.png" />
+										<p>十方游戏杂谈&nbsp;4评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">火影手游:"千万战力"玩家卖号,看清金币数后,网友:你是咋想的</p>
+										<img src="img/youxi8.png" />
+										<p>若见浅香&nbsp;5评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">哪些皮肤会让你的号价值连城?狮心王上榜,这款皮肤比狮心王还珍贵</p>
+										<img src="img/youxi9.png" />
+										<p>王者乖敖丙&nbsp;10评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">28皮肤碎片该换谁?年年有余手感一般,而它堪比史诗级皮肤</p>
+										<img src="img/youxi10.png" />
+										<p>玫娱两三年&nbsp;10评</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item6mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<img src="img/piyao0.png"/ style="width: 40px;height: 20px;">
+										<span style="font-size: 20px;color: black;">不要让这些谣言毁了你的生活</span>
+										<img src="img/piyao1.png" />
+										<p>宜昌康宁医院&nbsp;5评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<img src="img/piyao0.png"/ style="width: 40px;height: 20px;">
+										<span style="font-size: 20px;color: black;">猫咪追逐扑闹就是在打架?不一定,这也是喵星人的社交行为</span>
+										<img src="img/piyao2.png" />
+										<p>只想给你宠爱&nbsp;5评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<img src="img/piyao0.png"/ style="width: 40px;height: 20px;">
+										<span style="font-size: 20px;color: black;">哈士奇的智商并不低,人家只是执着于自己的独特想法而已!</span>
+										<img src="img/piyao3.png" />
+										<p>聊宠物</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<img src="img/piyao0.png"/ style="width: 40px;height: 20px;">
+										<span style="font-size: 20px;color: black;">猫只有感觉到愉悦的时候才会打呼噜?不,害怕的时候也会</span>
+										<img src="img/piyao4.png" />
+										<p>往昔云烟&nbsp;1评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<img src="img/piyao0.png"/ style="width: 40px;height: 20px;">
+										<span style="font-size: 20px;color: black;">狮子被分到犬科了?分类学上并无此结论,狮子仍属猫科</span>
+										<img src="img/piyao5.png" />
+										<p>动物速递&nbsp;16评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<img src="img/piyao0.png"/ style="width: 40px;height: 20px;">
+										<span style="font-size: 20px;color: black;">文玩圈"辟谣"第二季</span>
+										<img src="img/piyao6.png" />
+										<p>文玩犬&nbsp;1评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<img src="img/piyao0.png"/ style="width: 40px;height: 20px;">
+										<span style="font-size: 20px;color: black;">那些所谓的肥水,真能让多肉肥美?</span>
+										<img src="img/piyao7.png" />
+										<p>仙致多肉</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<img src="img/piyao0.png"/ style="width: 40px;height: 20px;">
+										<span style="font-size: 20px;color: black;">手机发射塔的信号成"隐形杀手",会对健康产生影响?纯属谣言!</span>
+										<img src="img/piyao8.png" />
+										<p>随时随地聊科技&nbsp;1评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<img src="img/piyao0.png"/ style="width: 40px;height: 20px;">
+										<span style="font-size: 20px;color: black;">最近有个谣言说&nbsp;小贵人鳄鱼皮苹果表带才卖380块钱?</p>
+										<img src="img/piyao9.png" />
+										<p>小贵人无印奢品</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<img src="img/piyao0.png"/ style="width: 40px;height: 20px;">
+										<span style="font-size: 20px;color: black;">怼言怼语|喝酒助眠?熬夜补个觉就行?假的!醒醒</p>
+										<img src="img/piyao10.png" />
+										<p>互联网联合辟谣平台&nbsp;1评</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+			</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.material.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+		mui.init();
+		(function($) {
+			//阻尼系数
+			var deceleration = mui.os.ios ? 0.003 : 0.0009;
+			$('.mui-scroll-wrapper').scroll({
+				bounce: false,
+				indicators: true, //是否显示滚动条
+				deceleration: deceleration
+			});
+			$.ready(function() {
+				//循环初始化所有下拉刷新，上拉加载。
+				$.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
+					$(pullRefreshEl).pullToRefresh({
+						down: {
+							callback: function() {
+								var self = this;
+								setTimeout(function() {
+									var ul = self.element.querySelector('.mui-table-view');
+									ul.insertBefore(createFragment(ul, index, 10, true), ul.firstChild);
+									self.endPullDownToRefresh();
+								}, 1000);
+							}
+						},
+						up: {
+							callback: function() {
+								var self = this;
+								setTimeout(function() {
+									var ul = self.element.querySelector('.mui-table-view');
+									ul.appendChild(createFragment(ul, index, 5));
+									self.endPullUpToRefresh();
+								}, 1000);
+							}
+						}
+					});
+				});
+				var createFragment = function(ul, index, count, reverse) {
+					var length = ul.querySelectorAll('li').length;
+					var fragment = document.createDocumentFragment();
+					var li;
+					for(var i = 0; i < count; i++) {
+						li = document.createElement('li');
+						li.className = 'mui-table-view-cell';
+						li.innerHTML = '<p style="font-size: 20px;color: black;">女生:"我累了",钢铁直男才回"抱抱",试试这3回复打动她</p><img src="img/gaoxiao7.png" /><p>碧海潮生生蝶梦&nbsp;104评</p>';
+						fragment.appendChild(li);
+						li = document.createElement('li');
+						li.className = 'mui-table-view-cell';
+						li.innerHTML = '<p style="font-size: 20px;color: black;">同样是演"痞子",张一山A级,陈小春S级,最后一个隔着屏幕都觉得害怕!</p><img src="img/gaoxiao3.png" /><p>兰姐看娱乐&nbsp;201评</p>';
+						fragment.appendChild(li);
+					}
+					return fragment;
+				};
+			});
+		})(mui);
+	</script>
+</html>

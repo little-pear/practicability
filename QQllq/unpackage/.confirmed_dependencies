@@ -1,0 +1,108 @@
+{
+  "1.html": {
+    "href": "1.html",
+    "resources": [
+      "js/mui.min.js",
+      "js/mui.pullToRefresh.js",
+      "js/mui.pullToRefresh.material.js",
+      "css/mui.min.css"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "5.html": {
+    "href": "5.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "4.html": {
+    "href": "4.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "img/3MB.jpg",
+      "img/qingli.jpg",
+      "img/weixinzhuanqing.jpg",
+      "img/qqzhuanqing.jpg",
+      "img/liulanqizhuangqing.jpg",
+      "img/gengduo(1).png",
+      "img/wendang1.jpg",
+      "img/wendang2.jpg",
+      "img/wenben1.jpg",
+      "img/wenben2.jpg",
+      "img/wenben3.jpg",
+      "img/xiazai.png",
+      "img/weixin.png",
+      "img/qq.png",
+      "img/tupian.png",
+      "img/shipin.png",
+      "img/chucun.png",
+      "img/wendang.png",
+      "img/anzhuangbao.png",
+      "img/yasuobao.png",
+      "img/gengduo.png"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "2.html": {
+    "href": "2.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "img/huanbao.mp4"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "3.html": {
+    "href": "3.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "img/qq.png",
+      "img/weixin.png",
+      "img/liaotianxinxi.png",
+      "img/shezhi.png",
+      "img/guanzhu..png",
+      "img/shoucang.png",
+      "img/lishi.png",
+      "img/xiazai.png",
+      "img/wuhen.png",
+      "img/yejian.png",
+      "img/qianbao.png",
+      "img/dawangka.png",
+      "img/fenxiang.png",
+      "img/wifi.png",
+      "img/tuichu.png",
+      "img/xingqiu.png",
+      "img/sousuo.png",
+      "img/tianjia.png"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "js/mui.min.js",
+      "js/mui.pullToRefresh.js",
+      "js/mui.pullToRefresh.material.js",
+      "css/mui.min.css",
+      "css/icons-extra.css",
+      "1.html"
+    ],
+    "refer": [
+      "1.html",
+      "5.html",
+      "4.html",
+      "2.html",
+      "3.html"
+    ],
+    "priority": 0
+  }
+}

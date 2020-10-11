@@ -1,0 +1,726 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			
+			#slider {
+				margin-top: 30px;
+			}
+			
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+			
+			.mui-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+			
+			.mui-bar~.mui-pull-top-tips {
+				top: 24px;
+			}
+			
+			.mui-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+			
+			.mui-pull-top-tips.mui-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+			
+			.mui-pull-top-tips .mui-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+				margin: 0;
+			}
+			
+			.mui-pull-top-wrapper .mui-icon,
+			.mui-pull-top-wrapper .mui-spinner {
+				margin-top: 7px;
+			}
+			
+			.mui-pull-top-wrapper .mui-icon.mui-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+			
+			.mui-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+				margin-bottom: 50px;
+			}
+			
+			.mui-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				border-radius: 40px;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+			
+			.mui-pull-top-canvas canvas {
+				width: 40px;
+			}
+			
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+			}
+			.shoucang{
+				width: 100%;
+				margin: 0 auto;
+				height: 25px;
+				margin-top: 20px;
+			}
+			.shoucang p{
+				float: left;
+				color: black;
+				font-size: 16px;
+				margin-left: 20px;
+				font-weight: bold;
+			}
+			.shoucang span{
+				float: right;
+				margin-right: 20px;
+			}
+			.shoucang a{
+				color: gray;
+				text-decoration: none;
+			}
+			.shujia{
+				margin-top: 60px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-input-row mui-search mui-plus-visible">
+			<input id="search" type="search" class="mui-input-speech mui-input-clear" placeholder="搜索或输入网址">
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							小视频
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							免费小说
+						</a>
+						<a class="mui-control-item" href="#item3mobile">
+							美食
+						</a>
+						<a class="mui-control-item" href="#item4mobile">
+							搞笑
+						</a>
+						<a class="mui-control-item" href="#item5mobile">
+							游戏
+						</a>
+						<a class="mui-control-item" href="#item6mobile">
+							社会
+						</a>
+						<a class="mui-control-item" href="#item7mobile">
+							萌宝
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<video width="100%" height="100%" autoplay="autoplay" controls="controls">
+											<source src="img/1.mp4" type="video/mp4"></source>
+											
+										           
+										</video>
+									</li>
+									<li class="mui-table-view-cell"><a href="sp2.html">
+									<img src="img/p2.jpg"/></a>
+									</li>	
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-3
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-4
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-5
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-6
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-7
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-8
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-9
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-10
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-11
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-12
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-13
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-14
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-15
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-16
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-17
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-18
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-19
+									</li>
+									<li class="mui-table-view-cell">
+										第1个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content" style="background: white;">
+						<div class="shoucang">
+							<p>我的收藏</p>
+							<span><a href="#">查看全部&nbsp;&nbsp;&gt;</a></span>
+						</div>
+						<div class="shujia">
+							<img src="img/kongshujia.jpg"/ style="width: 60%;margin-left: 90px;">
+							<img src="img/mingtianxia.jpg"/ style="width: 100%;">
+							<img src="img/4_11.jpg"/ style="width: 80%;margin-left: 40px;">
+						</div>
+						<div class="shoucang">
+							<p>猜你喜欢</p>
+							<span><a href="#">换一换</a></span>
+						</div>
+						<div class="">
+							<img src="img/dianzishu.jpg"/>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">心理学:假如只有10块,你会买哪种小吃?测你什么时候能暴富!</p>
+										<img src="img/meishi1.png"/>
+										<p>牛牛聊吧&nbsp;6评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">穷吃VS富吃,馒头还好,泡面还好,看到饺子间的差距:想要有钱</p>
+										<img src="img/meishi2.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">这些美食明明是中国菜,却因为名字,大部分人误认为是中国菜!</p>
+										<img src="img/meishi3.png"/>
+										<p>柠檬美食&nbsp;10评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">吃牛排之前先给你一份面包,并不是服务员搞错了,别再因为不知道被嘲笑了</p>
+										<img src="img/meishi4.png"/>
+										<p>娱乐新天地君&nbsp;26评</p>
+									</li>
+									<li class="mui-table-view-cell">
+		    							<p style="font-size: 20px;color: black;">青岛市最土豪的餐厅一顿要多少钱?青岛市土豪餐厅完整"名单"及"排行榜"公示!</p>
+										<img src="img/meishi5.png"/>
+										<p>与你倒数&nbsp;9评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">厨娘还原《海绵宝宝》的蟹黄堡,第一眼:好认真啊,成品:口水"流"出来了</p>
+										<img src="img/meishi6.png"/>
+										<p>闯荡世界&nbsp;8评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">肯德基员工揭秘:这4样食物可别点,小心老板当你"傻",量少味差不实惠</p>
+										<img src="img/meishi7.png"/>
+										<p>静若繁花花&nbsp;4评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">脾虚胃虚的,每天拿"它"当零食吃,修护胃粘膜,还能润肺止咳!</p>
+										<img src="img/meishi8.png"/>
+										<p>美食杰营养课堂&nbsp;5评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;"></p>
+										<img src="img/meishi9.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;"></p>
+										<img src="img/meishi10.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">穷吃VS富吃,馒头还好,泡面还好,看到饺子间的差距:想要有钱</p>
+										<img src="img/meishi2.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">穷吃VS富吃,馒头还好,泡面还好,看到饺子间的差距:想要有钱</p>
+										<img src="img/meishi2.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">穷吃VS富吃,馒头还好,泡面还好,看到饺子间的差距:想要有钱</p>
+										<img src="img/meishi2.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">穷吃VS富吃,馒头还好,泡面还好,看到饺子间的差距:想要有钱</p>
+										<img src="img/meishi2.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">穷吃VS富吃,馒头还好,泡面还好,看到饺子间的差距:想要有钱</p>
+										<img src="img/meishi2.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">穷吃VS富吃,馒头还好,泡面还好,看到饺子间的差距:想要有钱</p>
+										<img src="img/meishi2.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">穷吃VS富吃,馒头还好,泡面还好,看到饺子间的差距:想要有钱</p>
+										<img src="img/meishi2.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">穷吃VS富吃,馒头还好,泡面还好,看到饺子间的差距:想要有钱</p>
+										<img src="img/meishi2.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">穷吃VS富吃,馒头还好,泡面还好,看到饺子间的差距:想要有钱</p>
+										<img src="img/meishi2.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">穷吃VS富吃,馒头还好,泡面还好,看到饺子间的差距:想要有钱</p>
+										<img src="img/meishi2.png"/>
+										<p>酷酷娱乐谈&nbsp;25评</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">马云来真的了!花呗封号条件再次被确认,碰到就停封</p>
+										<img src="img/gaoxiao1.jpg"/>
+										<p>风一样的女人职场说</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">那个和支付宝撞名的大爷,曾想起诉阿里,如今成了这样</p>
+										<img src="img/gaoxiao2.jpg"/>
+										<p>可乐御风</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">同样是演"痞子",张一山A级,陈小春S级,最后一个隔着屏幕都觉得害怕!</p>
+										<img src="img/gaoxiao3.png"/>
+										<p>兰姐看娱乐&nbsp;201评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">心理学:凭第一直觉,哪个破盘子是假的?测你智商的高低!</p>
+										<img src="img/gaoxiao4.png"/>
+										<p>社会扒一扒&nbsp;6评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">5种生物死后的骨架,大熊猫是真的可怕,完全失去了生前的憨态</p>
+										<img src="img/gaoxiao5.png"/>
+										<p>大斌历史&nbsp;790评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">有种"整容"叫做活佛济公的必清,如今留长发戴眼镜,38岁像20岁</p>
+										<img src="img/gaoxiao6.png"/>
+										<p>灼伤的心情&nbsp;98评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">女生:"我累了",钢铁直男才回"抱抱",试试这3回复打动她</p>
+										<img src="img/gaoxiao7.png"/>
+										<p>碧海潮生生蝶梦&nbsp;104评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">《庆余年》中最神秘角色!毫无戏份,却凭一己之力带出四大宗师</p>
+										<img src="img/gaoxiao8.png"/>
+										<p>伍脊六兽&nbsp;85评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">《家有儿女》10年前VS后,认出关晓彤,却没发现"寸头的包贝尔"!</p>
+										<img src="img/gaoxiao9.png"/>
+										<p>撩汉漫画IL&nbsp;86评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">女生发"早呀",直男才回"早",高情商的人:看了文章就秒懂了</p>
+										<img src="img/gaoxiao10.png"/>
+										<p>水清云淡一段浊&nbsp;24评</p>
+									</li>
+									<li class="mui-table-view-cell">
+			     						<p style="font-size: 20px;color: black;">爱情公寓10年后,"曾小贤"和"张伟"已为人父,他已去世5年</p>
+										<img src="img/gaoxiao11.png"/>
+										<p>海涛侃娱乐&nbsp;5评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">庆余年:庆帝一句话暴露了和范闲的关系,可惜范闲没注意,太遗憾了</p>
+										<img src="img/gaoxiao12.png"/>
+										<p>天下论武小达人&nbsp;18评</p>
+									</li>
+									<li class="mui-table-view-cell">
+					    				<p style="font-size: 20px;color: black;">每年因熬夜猝死55万人!提醒:3个"必须休息"的信号,务必了解下</p>
+										<img src="img/gaoxiao13.png"/>
+										<p>幼安吖&nbsp;17评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">女生发"我生气了",青铜才回"我错了",王者大佬教你怎么回</p>
+										<img src="img/gaoxiao14.png"/>
+										<p>小玉评车&nbsp;254评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">有一种心动叫"俄罗斯美女穿汉服",当她抬头后:俘获无数中国男人!</p>
+										<img src="img/gaoxiao15.png"/>
+										<p>乔乔细谈娱乐&nbsp;43评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">男子连续30天,每天喝4升水,看看他最后变成了什么样子?</p>
+										<img src="img/gaoxiao16.png"/>
+										<p>玩爆视频圈&nbsp;315评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">"神雕"现实存在,看完明白摄制组不用它的原因"不敢用也用不起"</p>
+										<img src="img/gaoxiao17.png"/>
+										<p>喵喵杨小羽&nbsp;69评</p>				
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">狗狗一直低头抽泣,鼻子有个血洞,看到里面的东西,破口大骂</p>
+										<img src="img/gaoxiao18.png"/>
+										<p>宠物爱秀&nbsp;483评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">"各个国家的孙悟空,美国的忍了,日本的忍了,韩国的是什么鬼?"</p>
+										<img src="img/gaoxiao19.png"/>
+										<p>微醺的智豆&nbsp;43评</p>
+									</li>
+									<li class="mui-table-view-cell">
+										<p style="font-size: 20px;color: black;">心理学:你是否有"深海恐惧症",坚持看到最后一张都是大神</p>
+										<img src="img/gaoxiao20.png"/>
+										<p>斯乔钟爱游戏&nbsp;379评</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item5mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-1
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-2
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-3
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-4
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-5
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-6
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-7
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-8
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-9
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-10
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-11
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-12
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-13
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-14
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-15
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-16
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-17
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-18
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-19
+									</li>
+									<li class="mui-table-view-cell">
+										第5个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item6mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-1
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-2
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-3
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-4
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-5
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-6
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-7
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-8
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-9
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-10
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-11
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-12
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-13
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-14
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-15
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-16
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-17
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-18
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-19
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item7mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										第7个选项卡子项-1
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-2
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-3
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-4
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-5
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-6
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-7
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-8
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-9
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-10
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-11
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-12
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-13
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-14
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-15
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-16
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-17
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-18
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-19
+									</li>
+									<li class="mui-table-view-cell">
+										第6个选项卡子项-20
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.material.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+		mui.init();
+		(function($) {
+			//阻尼系数
+			var deceleration = mui.os.ios ? 0.003 : 0.0009;
+			$('.mui-scroll-wrapper').scroll({
+				bounce: false,
+				indicators: true, //是否显示滚动条
+				deceleration: deceleration
+			});
+			$.ready(function() {
+				//循环初始化所有下拉刷新，上拉加载。
+				$.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
+					$(pullRefreshEl).pullToRefresh({
+						down: {
+							callback: function() {
+								var self = this;
+								setTimeout(function() {
+									var ul = self.element.querySelector('.mui-table-view');
+									ul.insertBefore(createFragment(ul, index, 10, true), ul.firstChild);
+									self.endPullDownToRefresh();
+								}, 1000);
+							}
+						},
+						up: {
+							callback: function() {
+								var self = this;
+								setTimeout(function() {
+									var ul = self.element.querySelector('.mui-table-view');
+									ul.appendChild(createFragment(ul, index, 5));
+									self.endPullUpToRefresh();
+								}, 1000);
+							}
+						}
+					});
+				});
+				var createFragment = function(ul, index, count, reverse) {
+					var length = ul.querySelectorAll('li').length;
+					var fragment = document.createDocumentFragment();
+					var li;
+					for(var i = 0; i < count; i++) {
+						li = document.createElement('li');
+						li.className = 'mui-table-view-cell';
+						li.innerHTML = '第' + (index + 1) + '个选项卡子项-' + (length + (reverse ? (count - i) : (i + 1)));
+						fragment.appendChild(li);
+					}
+					return fragment;
+				};
+			});
+		})(mui);
+	</script>
+
+</html>

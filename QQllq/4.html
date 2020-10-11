@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			html,
+			body {
+				background-color: white;
+			}
+			
+			img {
+				width: 25px;
+				height: 25px;
+			}
+			
+			.ul {
+				width: 100%;
+				height: auto;
+				margin: 0 auto;
+			}
+			
+			.u3 {
+				margin-top: 60px;
+			}
+			
+			.u1 {
+				width: 70px;
+				text-align: center;
+				font-size: 14px;
+				float: left;
+			}
+			
+			.u2 {
+				width: 70px;
+				text-align: center;
+				font-size: 14px;
+				float: left;
+			}
+			
+			.u4 {
+				width: 50px;
+				text-align: center;
+				font-size: 14px;
+				float: left;
+			}
+			
+			.qingli {
+				float: left;
+				width: 100%;
+				margin: 0 auto;
+				height: auto;
+			}
+			
+			.wendang {
+				float: left;
+				width: 400px;
+				margin: 0 auto;
+				height: auto;
+				margin-top: 15px;
+			}
+			.mui-plus .plus{
+				display: inline;
+			}
+			
+			.plus{
+				display: none;
+			}
+			
+			#topPopover {
+				position: fixed;
+				top: 16px;
+				right: 6px;
+			}
+			#topPopover .mui-popover-arrow {
+				left: auto;
+				right: 6px;
+			}
+			.mui-popover {
+				height: 180px;
+				width: 140px;
+			}
+			.mui-content {
+				padding: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-search mui-pull-left"  href="search.html"></a>
+			<a id="menu" class="mui-action-menu mui-icon mui-icon-more mui-pull-right" href="#topPopover"></a>
+			<h1 class="mui-title">腾讯文件</h1>
+		</header>
+		<!--右上角弹出菜单-->
+		<div id="topPopover" class="mui-popover">
+			<div class="mui-popover-arrow"></div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a href="#">私密空间</a>
+						</li>
+						<li class="mui-table-view-cell"><a href="#">文件设置</a>
+						</li>
+						<li class="mui-table-view-cell"><a href="#">帮助与反馈</a>
+						</li>
+						<li class="mui-table-view-cell"><a href="#">安装桌面入口</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="shiying">
+
+		</div>
+		<div class="ul">
+			<div class="u3">
+
+			</div>
+			<div class="u1" style="width: 17%;">
+				<span><img src="img/xiazai.png"/></span><br />
+				<span>最近下载</span><br />
+				<span>9</span>
+			</div>
+			<div class="u2" style="width: 17%;margin-left: 20px;">
+				<span><img src="img/weixin.png"/></span><br />
+				<span>微信文件</span><br />
+				<span>82</span>
+			</div>
+			<div class="u2" style="width: 17%;margin-left: 20px;">
+				<span><img src="img/qq.png"/></span><br />
+				<span>QQ文件</span><br />
+				<span>9</span>
+			</div>
+			<div class="u4" style="width: 17%;margin-left: 5px;">
+				<span><img src="img/tupian.png"/></span><br />
+				<span>图片</span><br />
+				<span>13</span>
+			</div>
+			<div class="u4" style="width: 17%;">
+				<span><img src="img/shipin.png"/></span><br />
+				<span>视频</span><br />
+				<span>66</span>
+			</div>
+			<div class="u1" style="clear: both;margin-top: 15px;width: 17%;">
+				<span><img src="img/chucun.png"/></span><br />
+				<span>手机储存</span><br />
+				<span>1</span>
+			</div>
+			<div class="u2" style="margin-top: 15px;width: 17%;margin-left: 20px;">
+				<span><img src="img/wendang.png"/></span><br />
+				<span>文档</span><br />
+				<span>13</span>
+			</div>
+			<div class="u2" style="margin-top: 15px;width: 17%;margin-left: 20px;">
+				<span><img src="img/anzhuangbao.png"/></span><br />
+				<span>安装包</span><br />
+				<span>33</span>
+			</div>
+			<div class="u4" style="margin-top: 15px;width: 17%;margin-left: 5px;">
+				<span><img src="img/yasuobao.png"/></span><br />
+				<span>压缩包</span><br />
+				<span>84</span>
+			</div>
+			<div class="u4" style="margin-top: 15px;width: 17%;">
+				<span><img src="img/gengduo.png"/></span><br />
+				<span>更多</span><br />
+				<span>4</span>
+			</div>
+		</div>
+		<div class="qingli"style="width: 100%;">
+			<img src="img/3MB.jpg" style="width: 60%;height: 70px;margin-top: 10px;" />
+			<a href=""><img src="img/qingli.jpg" style="width: 30%;height: 70px;margin-left: 20px;" /></a>
+			<a href=""><img src="img/weixinzhuanqing.jpg" / style="width: 31%;height: 70px;margin-left: 5px;"></a>
+			<a href=""><img src="img/qqzhuanqing.jpg" / style="width: 32%;height: 70px;"></a>
+			<a href=""><img src="img/liulanqizhuangqing.jpg" / style="width: 32%;height: 70px;"></a>
+		</div>
+		<div class="wendang" style="width: 100%;">
+			<span style="font-weight: bold;color: black;">最近文档</span>
+			<a href=""><img src="img/gengduo(1).png" / style="float: right;width: 50px;"></a><br />
+			<a href=""><img src="img/wendang1.jpg" / style="width: 100%;height: 50px;margin-top: 5px;"></a>
+			<a href=""><img src="img/wendang2.jpg" / style="width: 100%;height: 50px;margin-top: 5px;"></a>
+		</div>
+		<div class="wendang" style="width: 100%;">
+			<span style="font-weight: bold;color: black;">最近TXT</span>
+			<a href=""><img src="img/gengduo(1).png" / style="float: right;width: 50px;"></a><br />
+			<a href=""><img src="img/wenben1.jpg" / style="width: 80px;height: 90px;margin-top: 5px;"></a>
+			<a href=""><img src="img/wenben2.jpg" / style="width: 80px;height: 90px;margin-top: 5px;"></a>
+			<a href=""><img src="img/wenben3.jpg" / style="width: 80px;height: 90px;margin-top: 5px;"></a>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init();
+				mui.plusReady(function () {
+//				var view = plus.nativeObj.View.getViewById("title");
+//				
+//				var bitmap = new plus.nativeObj.Bitmap("back");
+//				bitmap.loadBase64Data("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAb1BMVEUAAAAAev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8AAACubimgAAAAI3RSTlMAGfUTGfQTGPMSGPIYGhgaGBsXGxcbFxwXHBccFhwWHRYdHWufDPQAAAABYktHRACIBR1IAAAAB3RJTUUH4QETEBwooeTlkQAAAJVJREFUSMft1EkSgkAQRNFGUXFWHBDBibr/HTUwD5B/48Ig1y+io7u6MqUhf5hsNEY+j5hMgZ/FJ8Xc9ovos3T96utjbfqN/Nb0O/m96Uv5g+mP8ifTn+Ur01/ka9Nf5RvTt/I309/lH6Z/yr9Mn+Q71/MT8B34K/E58Enzv8R/K98HvnF8p3lr8F7izce7lbf3kJ/lDQp9HdBhgg3PAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE3LTAxLTE5VDE2OjI4OjQwKzA4OjAwpTDFwQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNy0wMS0xOVQxNjoyODo0MCswODowMNRtfX0AAAAASUVORK5CYII=");
+//				view.drawBitmap(bitmap, {}, {
+//					top: "10px",
+//					left: "10px",
+//					width: "24px",
+//					height: "24px"
+//				});
+//				
+//				view.setTouchEventRect({top:"0px",left:"0px",width:"44px",height:"100%"});
+			});
+			
+			mui('.mui-scroll-wrapper').scroll();
+			mui('body').on('shown', '.mui-popover', function(e) {
+				//console.log('shown', e.detail.id);//detail为当前popover元素
+			});
+			mui('body').on('hidden', '.mui-popover', function(e) {
+				//console.log('hidden', e.detail.id);//detail为当前popover元素
+			});
+	</script>
+
+</html>
