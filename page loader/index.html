@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>page loader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="main" style="text-align:center;">
+    <h1>Welcome to Chang</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ullam, optio commodi ad expedita molestias
+      aliquam iure vero itaque mollitia corporis laudantium consectetur totam, deserunt deleniti, asperiores delectus
+      sapiente neque facilis consequuntur animi nesciunt voluptatem! Nam tenetur id non illum ipsum, excepturi
+      blanditiis. Dolorum, veniam odit! Assumenda dolor voluptas nostrum.</p>
+  </div>
+
+  <div class="container">
+    <div id="load"></div>
+  </div>
+
+  <script>
+    document.querySelector('.main').style.display = 'none';
+    document.getElementById('load').classList.add('loader')
+    setTimeout(() => {
+      document.getElementById('load').classList.remove('loader')
+      document.querySelector('.main').style.display = 'block';
+    }, 4000)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 18em;
+}
+
+.loader {
+  position: relative;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  width: 1.8em;
+  height: 1.8em;
+  position: absolute;
+  border-radius: 4em;
+}
+
+.loader::before {
+  background: lightcoral;
+  left: 0;
+  animation: moveLeft 1s ease infinite;
+}
+
+.loader::after {
+  background: lightgreen;
+  right: 0;
+  animation: moveRight 1s ease infinite;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+    background: rgba(144, 238, 144, 0.692);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+    background: rgba(240, 128, 128, 0.692);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
