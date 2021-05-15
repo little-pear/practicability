@@ -1,0 +1,43 @@
+body {
+  background: #f09819;
+  background: linear-gradient(to right, #edde5d, #f09819);
+}
+
+.container {
+  text-align: center;
+  margin-top: 25%;
+}
+
+.shakeMe {
+  padding: .5em 2em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  border-radius: .1em;
+  border: 0;
+  color: whitesmoke;
+  background: #d31027;
+  background: linear-gradient(to right, #ea384d, #d31027);
+  animation: shake .8s ease-in;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(.8em);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, .5);
+  }
+  10%,
+  30%,
+  50% {
+    transform: translate(-.2em);
+  }
+  70%,
+  100% {
+    transform: translate(0);
+  }
+}
