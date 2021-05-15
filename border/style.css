@@ -1,0 +1,41 @@
+body {
+  background: #7F7FD5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.text-center {
+  text-align: center;
+  margin-top: 25%;
+}
+
+.hover-border {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 80px;
+  text-decoration: none;
+  position: relative;
+  color: #fff;
+}
+
+.hover-border::after {
+  content: "";
+  width: 0%;
+  /* width: 15%; */
+  height: 7px;
+  background: #f12711;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #FAFFD1, #A1FFCE);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #FAFFD1, #A1FFCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  /* left: 80%; */
+  border-radius: 10px;
+  transition: all 500ms ease;
+}
+
+.hover-border:hover::after {
+  left: 0%;
+  width: 100%;
+  /* width: 100%; */
+}
